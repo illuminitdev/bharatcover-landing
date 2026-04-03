@@ -1,0 +1,222 @@
+.claimsPage {
+  min-height: 100vh;
+}
+
+.hero {
+  background: var(--light-color);
+  color: var(--text-dark);
+  padding: 100px 0 80px;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  opacity: 0;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  opacity: 0;
+  color: var(--text-light);
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.processSection {
+  margin-bottom: 80px;
+}
+
+.processTitle {
+  font-size: 2rem;
+  color: var(--text-dark);
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.processSteps {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.processStep {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 50px;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.stepNumber {
+  flex-shrink: 0;
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: var(--white);
+  border-radius: 50%;
+  font-size: 2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px var(--glow-primary);
+  transition: transform 0.3s ease;
+}
+
+.processStep:hover .stepNumber {
+  transform: scale(1.1);
+}
+
+.stepContent {
+  flex: 1;
+}
+
+.stepContent h4 {
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+}
+
+.stepContent > p {
+  color: var(--text-light);
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+.stepContent ul {
+  list-style: none;
+  padding: 0;
+}
+
+.stepContent li {
+  padding: 8px 0;
+  padding-left: 30px;
+  position: relative;
+  color: var(--text-light);
+}
+
+.stepContent li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
+.supportSection {
+  margin-bottom: 80px;
+}
+
+.supportGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.supportCard {
+  background: var(--card-bg);
+  padding: 40px 30px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  text-align: center;
+  transition: all 0.3s ease;
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+.supportCard:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-color);
+}
+
+.supportIcon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.supportCard h4 {
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.supportCard p {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.ctaSection {
+  text-align: center;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 60px 40px;
+  border-radius: 15px;
+}
+
+.ctaSection h3 {
+  font-size: 2rem;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+}
+
+.ctaSection p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 30px;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1024px) {
+  .supportGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .processStep {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .stepNumber {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+
+  .stepContent h4 {
+    font-size: 1.3rem;
+  }
+
+  .supportGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .ctaButtons {
+    flex-direction: column;
+  }
+}

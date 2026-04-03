@@ -1,0 +1,390 @@
+.home {
+  overflow-x: hidden;
+}
+
+/* Full-Screen Hero Section */
+.heroContainer {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.heroContent {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.heroText {
+  position: relative;
+  z-index: 10;
+}
+
+.heroTitle {
+  font-size: 4.5rem;
+  font-weight: 900;
+  color: var(--text-dark);
+  margin-bottom: 30px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.gradient {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroDescription {
+  font-size: 1.3rem;
+  color: var(--text-light);
+  margin-bottom: 50px;
+  line-height: 1.6;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.heroButtons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Trust Bar */
+.trustBar {
+  background: var(--light-color);
+  padding: 40px 0;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.trustItems {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  text-align: center;
+}
+
+.trustItem {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.trustIcon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.trustItem p {
+  font-size: 1rem;
+  color: var(--text-light);
+}
+
+.trustItem strong {
+  color: var(--primary-color);
+  font-size: 1.3rem;
+  display: block;
+}
+
+/* About Snapshot */
+.aboutSnapshot {
+  text-align: center;
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Products Section */
+.productsSection {
+  background: var(--light-color);
+  padding: 100px 0;
+}
+
+.productsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.productCard {
+  /* Removed - using GlowCard component instead */
+}
+
+.productIcon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.productsGrid h3 {
+  font-size: 1.3rem;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+}
+
+.productsGrid p {
+  color: var(--text-light);
+  margin-bottom: 25px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Why Section */
+.whySection {
+  background: var(--light-color);
+}
+
+.whyGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.whyCard {
+  text-align: center;
+  animation: fadeInUp 0.8s ease-out forwards;
+  background: var(--card-bg);
+  padding: 40px 30px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.whyCard:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-color);
+  box-shadow: 0 8px 30px var(--glow-primary);
+}
+
+.whyIcon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.whyCard h3 {
+  font-size: 1.3rem;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.whyCard p {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* Partners & Clients Section */
+.partnersSection,
+.clientsSection {
+  background: var(--light-color);
+}
+
+.partnersGrid,
+.clientsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.partnerLogo,
+.clientLogo {
+  background: var(--card-bg);
+  padding: 40px 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  min-height: 120px;
+}
+
+.partnerLogo:hover,
+.clientLogo:hover {
+  transform: scale(1.05);
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 20px var(--glow-primary);
+}
+
+.partnerLogo span,
+.clientLogo span {
+  color: var(--text-light);
+  font-weight: 600;
+}
+
+/* Testimonials */
+.testimonialsSection {
+  background: var(--light-color);
+}
+
+.testimonialsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.testimonialCard {
+  background: var(--card-bg);
+  padding: 40px;
+  border-radius: 10px;
+  border-left: 4px solid var(--primary-color);
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--primary-color);
+  animation: slideInLeft 0.8s ease-out forwards;
+  transition: all 0.3s ease;
+}
+
+.testimonialCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px var(--glow-primary);
+}
+
+.testimonialText {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--text-light);
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+.testimonialAuthor {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.testimonialAuthor strong {
+  color: var(--text-dark);
+  font-size: 1rem;
+}
+
+.testimonialAuthor span {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* Claims Section */
+.claimsSection {
+  background: var(--light-color);
+}
+
+.claimsProcess {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.claimsStep {
+  text-align: center;
+  animation: fadeInUp 0.8s ease-out forwards;
+  background: var(--card-bg);
+  padding: 30px 20px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.claimsStep:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 8px 30px var(--glow-primary);
+}
+
+.stepNumber {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: var(--white);
+  border-radius: 50%;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 60px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.claimsStep:hover .stepNumber {
+  transform: scale(1.1);
+  animation: pulse 1s ease-in-out infinite;
+}
+
+.claimsStep h3 {
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.claimsStep p {
+  color: var(--text-light);
+}
+
+/* CTA styles removed - using hero section instead */
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .heroTitle {
+    font-size: 3.5rem;
+  }
+
+  .heroDescription {
+    font-size: 1.1rem;
+  }
+
+  .productsGrid,
+  .whyGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .partnersGrid,
+  .clientsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .claimsProcess {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .heroContainer {
+    padding: 80px 0;
+    min-height: auto;
+  }
+
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+
+  .heroDescription {
+    font-size: 1rem;
+  }
+
+  .heroButtons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .trustItems {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .productsGrid,
+  .whyGrid,
+  .testimonialsGrid,
+  .claimsProcess {
+    grid-template-columns: 1fr;
+  }
+
+  .partnersGrid,
+  .clientsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
