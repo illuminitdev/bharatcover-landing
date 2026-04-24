@@ -20,16 +20,19 @@ export default function Header() {
   return (
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
       <div className={styles.container}>
-        <Link href="/" className={styles.logo}>
-          <Image
-            src="/logo.png"
-            alt="VS Insurance Logo"
-            width={180}
-            height={60}
-            priority
-            className={styles.logoImage}
-          />
-        </Link>
+        <div className={styles.leftSection}>
+          <Link href="/" className={styles.logo}>
+            <Image
+              src="/logo.png"
+              alt="VS Insurance Logo"
+              width={180}
+              height={60}
+              priority
+              className={styles.logoImage}
+            />
+          </Link>
+          <Link href="/sales" className={styles.salesButton}>Sales</Link>
+        </div>
 
         <button
           className={styles.mobileToggle}

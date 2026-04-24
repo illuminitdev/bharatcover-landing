@@ -26,6 +26,12 @@
   height: 80px;
 }
 
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .logo {
   font-size: 1.5rem;
   font-weight: 700;
@@ -50,6 +56,22 @@
   height: auto;
   object-fit: contain;
   transition: transform 0.3s ease;
+}
+
+.salesButton {
+  background: var(--white);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.salesButton:hover {
+  background: var(--primary-color);
+  color: var(--white);
 }
 
 .nav {
@@ -194,7 +216,16 @@
     padding: 0 15px;
   }
 
+  .leftSection {
+    gap: 8px;
+  }
+
   .logo {
     font-size: 1.3rem;
+  }
+
+  .salesButton {
+    padding: 7px 12px;
+    font-size: 0.8rem;
   }
 }
