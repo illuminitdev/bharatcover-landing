@@ -1,0 +1,28 @@
+{
+  "name": "@bharatcover/landing-cdk",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "cdk": "cdk",
+    "synth": "cdk synth",
+    "deploy": "cdk deploy --require-approval never"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.147",
+    "@types/node": "^20.17.0",
+    "aws-cdk": "^2.1020.2",
+    "aws-cdk-lib": "^2.204.0",
+    "constructs": "^10.4.2",
+    "esbuild": "^0.25.0",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.758.0",
+    "@aws-sdk/client-sesv2": "^3.1037.0",
+    "@aws-sdk/client-ssm": "^3.758.0",
+    "@aws-sdk/lib-dynamodb": "^3.758.0",
+    "zod": "^3.24.2"
+  }
+}

@@ -1,0 +1,353 @@
+openapi: 3.0.3
+info:
+  title: BharatCover Landing Guest API
+  version: 0.1.0
+  description: |
+    Public REST API for guest insurance funnel (no Cognito).
+    Base URL is the API Gateway stage URL (see CDK output `ApiUrl`).
+servers:
+  - url: https://{apiId}.execute-api.{region}.amazonaws.com/{stage}
+    variables:
+      apiId:
+        default: xxxxx
+      region:
+        default: ap-south-1
+      stage:
+        default: development
+
+paths:
+  /products:
+    get:
+      summary: List products
+      operationId: listProducts
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  products:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ProductSummary'
+
+  /products/{productId}:
+    get:
+      summary: Get product by id
+      operationId: getProduct
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  product:
+                    $ref: '#/components/schemas/ProductSummary'
+        '404':
+          description: Not found
+
+  /guest/sessions:
+    post:
+      summary: Create guest customer, policy draft, and session
+      operationId: createGuestSession
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [productId]
+              properties:
+                productId:
+                  type: string
+                phone:
+                  type: string
+                email:
+                  type: string
+                  format: email
+                leadSource:
+                  type: string
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GuestSessionCreated'
+
+  /guest/sessions/{sessionId}:
+    get:
+      summary: Resume session (requires Bearer guest token)
+      operationId: getGuestSession
+      parameters:
+        - name: sessionId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      security:
+        - GuestBearer: []
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Missing token
+        '403':
+          description: Invalid token
+        '410':
+          description: Session expired
+
+  /guest/policies/{policyId}:
+    get:
+      summary: Get policy record
+      operationId: getGuestPolicy
+      parameters:
+        - name: policyId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      security:
+        - GuestBearer: []
+      responses:
+        '200':
+          description: OK
+    patch:
+      summary: Save policy details (nominee, address, etc.)
+      operationId: patchGuestPolicyDetails
+      parameters:
+        - name: policyId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      security:
+        - GuestBearer: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        '200':
+          description: OK
+
+  /guest/policies/{policyId}/status:
+    patch:
+      summary: Update policy status
+      operationId: patchGuestPolicyStatus
+      parameters:
+        - name: policyId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      security:
+        - GuestBearer: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [status]
+              properties:
+                status:
+                  type: string
+                  enum: [DRAFT, PENDING_PAYMENT, PAID, ISSUED, CANCELLED]
+                reason:
+                  type: string
+      responses:
+        '200':
+          description: OK
+
+  /guest/policies/{policyId}/kyc:
+    post:
+      summary: Start KYC (SurePass placeholder)
+      operationId: startKyc
+      parameters:
+        - name: policyId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      security:
+        - GuestBearer: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                flow:
+                  type: string
+                redirectUrl:
+                  type: string
+                  format: uri
+      responses:
+        '201':
+          description: Created
+
+  /guest/policies/{policyId}/kyc/result:
+    post:
+      summary: Persist KYC result
+      operationId: saveKycResult
+      parameters:
+        - name: policyId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      security:
+        - GuestBearer: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [status]
+              properties:
+                status:
+                  type: string
+                  enum: [success, failed, pending]
+                vendorReference:
+                  type: string
+                raw:
+                  type: object
+                  additionalProperties: true
+      responses:
+        '200':
+          description: OK
+
+  /guest/policies/{policyId}/payments/orders:
+    post:
+      summary: Create Razorpay order
+      operationId: createPaymentOrder
+      parameters:
+        - name: policyId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      security:
+        - GuestBearer: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                currency:
+                  type: string
+                  default: INR
+                notes:
+                  type: object
+                  additionalProperties:
+                    type: string
+      responses:
+        '200':
+          description: Order created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  orderId:
+                    type: string
+                  amount:
+                    type: integer
+                    description: Amount in smallest currency unit (paise)
+                  currency:
+                    type: string
+                  keyId:
+                    type: string
+                  policyId:
+                    type: string
+
+  /guest/payments/verify:
+    post:
+      summary: Verify Razorpay payment signature (client return)
+      operationId: verifyPayment
+      security:
+        - GuestBearer: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [razorpay_order_id, razorpay_payment_id, razorpay_signature]
+              properties:
+                razorpay_order_id:
+                  type: string
+                razorpay_payment_id:
+                  type: string
+                razorpay_signature:
+                  type: string
+      responses:
+        '200':
+          description: Verified
+        '400':
+          description: Invalid signature
+
+  /webhooks/razorpay:
+    post:
+      summary: Razorpay webhook (HMAC body verification)
+      operationId: razorpayWebhook
+      responses:
+        '200':
+          description: Acknowledged
+
+components:
+  securitySchemes:
+    GuestBearer:
+      type: http
+      scheme: bearer
+      bearerFormat: guest-signed-jwt-like-token
+  schemas:
+    ProductSummary:
+      type: object
+      properties:
+        productId:
+          type: string
+        name:
+          type: string
+        basePremiumPaise:
+          type: integer
+        sumInsured:
+          type: string
+        currency:
+          type: string
+    GuestSessionCreated:
+      type: object
+      properties:
+        sessionId:
+          type: string
+        policyId:
+          type: string
+        customerId:
+          type: string
+        guestToken:
+          type: string
+        expiresAt:
+          type: integer
+          description: Unix seconds
