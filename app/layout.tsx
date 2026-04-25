@@ -73,6 +73,8 @@ export const metadata: Metadata = {
   category: 'Insurance',
 };
 
+import ClientMain from "@/components/ClientMain";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -84,6 +86,7 @@ export default function RootLayout({
         <link rel="canonical" href={seoConfig.siteUrl} />
         <meta name="theme-color" content="#0066cc" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
       </head>
       <body>
@@ -91,7 +94,7 @@ export default function RootLayout({
         <StructuredData data={seoConfig.getOrganizationSchema()} />
         <StructuredData data={seoConfig.getWebsiteSchema()} />
         <Header />
-        <main style={{ marginTop: '80px' }}>{children}</main>
+        <ClientMain>{children}</ClientMain>
         <Footer />
       </body>
     </html>

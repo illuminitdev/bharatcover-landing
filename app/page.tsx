@@ -31,6 +31,9 @@ export default function Home() {
                     growing businesses, MSMEs, and large enterprises.
                   </p>
                   <div className={styles.heroButtons}>
+                    <MovingBorderButton href="/sales" variant="primary" size="large">
+                      Sales
+                    </MovingBorderButton>
                     <MovingBorderButton href="/contact" variant="primary" size="large">
                       Get a Quote
                     </MovingBorderButton>

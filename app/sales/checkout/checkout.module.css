@@ -1,0 +1,681 @@
+.pageShell {
+  min-height: 100vh;
+  background: #f3f4f6;
+  padding: 24px 16px 64px;
+  box-sizing: border-box;
+}
+
+.inner {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #4b5563;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+.backLink:hover {
+  color: #2563eb;
+}
+
+.pageHeader {
+  margin-bottom: 28px;
+}
+
+.pageTitle {
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: -0.02em;
+  margin: 0 0 8px;
+  line-height: 1.2;
+}
+
+.pageSubtitle {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+.stepperWrap {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.productStrip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 20px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.productStripLeft {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.productStripIcon {
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  background: #eff6ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #2563eb;
+  font-size: 1.35rem;
+}
+
+.productStripName {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 4px;
+  line-height: 1.25;
+}
+
+.productStripCategory {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.productStripRight {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.productStripPremiumLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 4px;
+}
+
+.productStripPrice {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #2563eb;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.productStripCoverage {
+  margin-top: 6px;
+  font-size: 0.8125rem;
+  color: #6b7280;
+}
+
+.wizardCard {
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 28px 28px 24px;
+  box-sizing: border-box;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.wizardBody {
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 28px;
+  box-sizing: border-box;
+}
+
+.wizardBodyWide {
+  max-width: 1040px;
+}
+
+.cardHeaderRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.cardHeaderText {
+  min-width: 0;
+}
+
+.wizardTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 6px;
+}
+
+.wizardLead {
+  color: #6b7280;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.verifiedBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #ecfdf5;
+  color: #047857;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  border: 1px solid #a7f3d0;
+}
+
+.formSectionTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 16px;
+  padding-top: 8px;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 28px 0 20px;
+}
+
+.formGrid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 24px;
+}
+
+.formRowFull {
+  grid-column: 1 / -1;
+}
+
+.formRow {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.labelReq {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #374151;
+}
+
+.req {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+.formRow input,
+.formRow textarea,
+.formRow select {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  font-size: 0.9375rem;
+  color: #111827;
+  font-family: inherit;
+  background: #f9fafb;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
+}
+
+.formRow select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b7280' d='M3 4.5L6 8l3-3.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+}
+
+.formRow input:focus,
+.formRow textarea:focus,
+.formRow select:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+  background: #fff;
+}
+
+.formRow textarea {
+  min-height: 88px;
+  resize: vertical;
+}
+
+.addressGrid3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px 24px;
+}
+
+.fieldError {
+  font-size: 0.8125rem;
+  color: #dc2626;
+  margin: 12px 0 0;
+}
+
+.wizardNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.navBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  cursor: pointer;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  color: #374151;
+  transition:
+    background 0.15s,
+    border-color 0.15s,
+    color 0.15s;
+}
+
+.navBtn:hover:not(:disabled) {
+  background: #f9fafb;
+  border-color: #d1d5db;
+}
+
+.navBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.navPrimary {
+  flex: 1;
+  max-width: 420px;
+  margin-left: auto;
+  background: #2563eb;
+  color: #fff;
+  border-color: #2563eb;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.navPrimary:hover:not(:disabled) {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 32px;
+  width: 100%;
+}
+
+.summaryCard,
+.paymentCard {
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px;
+  border: 1px solid #e5e7eb;
+}
+
+.sectionTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.productRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px;
+  background: #f9fafb;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.productInfo h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.productInfo p {
+  font-size: 0.8125rem;
+  color: #6b7280;
+}
+
+.productPrice {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.detailGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 20px;
+  margin-bottom: 24px;
+}
+
+.detailItem label {
+  display: block;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+
+.detailItem p {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.totalSection {
+  border-top: 1px dashed #e5e7eb;
+  padding-top: 20px;
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.totalLabel {
+  color: #6b7280;
+  font-size: 0.9375rem;
+}
+
+.totalVal {
+  font-weight: 600;
+  color: #374151;
+}
+
+.grandTotal {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #111827;
+  margin-top: 10px;
+}
+
+.paymentBtn {
+  width: 100%;
+  padding: 16px;
+  border-radius: 10px;
+  background: #16a34a;
+  color: white;
+  font-weight: 700;
+  font-size: 1.05rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.paymentBtn:hover:not(:disabled) {
+  background: #15803d;
+  box-shadow: 0 6px 16px rgba(22, 163, 74, 0.25);
+}
+
+.paymentBtn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.trustBadges {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 32px;
+  opacity: 0.55;
+}
+
+.confirmSuccess {
+  color: #047857;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.confirmMuted {
+  color: #6b7280;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  margin: 0 0 16px;
+}
+
+.confirmHint {
+  color: #64748b;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 0 0 4px;
+  padding: 12px 14px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+}
+
+.codeInline {
+  font-size: 0.8rem;
+  font-family: ui-monospace, monospace;
+  background: #e2e8f0;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+.postPayActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 8px 0 4px;
+}
+
+.postPayBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 1.1rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  box-sizing: border-box;
+  border: none;
+}
+
+.postPayBtnPrimary {
+  background: #1d4ed8;
+  color: #fff;
+}
+
+.postPayBtnPrimary:hover {
+  background: #1e40af;
+}
+
+.postPayBtnSecondary {
+  background: #fff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+}
+
+.postPayBtnSecondary:hover {
+  background: #eff6ff;
+}
+
+.policyDetailsPanel {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px 18px 18px;
+  margin: 0 0 20px;
+}
+
+.policyDetailsTitle {
+  margin: 0 0 12px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #64748b;
+}
+
+.policyDetailsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 20px;
+}
+
+@media (max-width: 560px) {
+  .policyDetailsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.policyDetailsItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.policyDetailsItemWide {
+  grid-column: 1 / -1;
+}
+
+.policyDetailsLabel {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #94a3b8;
+}
+
+.policyDetailsValue {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #0f172a;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.policyRefId {
+  font-size: 0.75rem;
+  font-weight: 500;
+  font-family: ui-monospace, monospace;
+  color: #475569;
+  word-break: break-all;
+}
+
+.confirmPolicyLoading {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin: 0 0 12px;
+}
+
+.policyDetailsError {
+  color: #b91c1c;
+  font-size: 0.875rem;
+  margin: 0 0 12px;
+}
+
+.directPayNote {
+  font-size: 0.85rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0 0 14px;
+}
+
+.navWideRow {
+  width: 100%;
+  max-width: 1040px;
+  margin: 20px auto 0;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .formGrid2,
+  .addressGrid3 {
+    grid-template-columns: 1fr;
+  }
+
+  .navPrimary {
+    max-width: none;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .wizardNav {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .cardHeaderRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .wizardCard,
+  .wizardBody {
+    padding: 20px 18px;
+  }
+
+  .pageShell {
+    padding: 16px 12px 48px;
+  }
+}

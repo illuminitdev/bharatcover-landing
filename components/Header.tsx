@@ -3,11 +3,17 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import styles from './Header.module.css';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isCheckoutFlow = pathname.startsWith('/sales/products') || 
+                         pathname.startsWith('/sales/contact') || 
+                         pathname.startsWith('/sales/checkout');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,6 +22,8 @@ export default function Header() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  if (isCheckoutFlow) return null;
 
   return (
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
@@ -45,6 +53,7 @@ export default function Header() {
           <Link href="/" className={styles.navLink}>Home</Link>
           <Link href="/about" className={styles.navLink}>About</Link>
           <Link href="/products" className={styles.navLink}>Products</Link>
+          <Link href="/sales" className={styles.navLink}>Sales</Link>
           <Link href="/why-choose-us" className={styles.navLink}>Why Choose Us</Link>
           <Link href="/claims" className={styles.navLink}>Claims</Link>
           <Link href="/contact" className={styles.ctaButton}>Get Quote</Link>
