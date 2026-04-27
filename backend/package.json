@@ -1,0 +1,38 @@
+{
+  "name": "vs-insurance-backend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "seed-admin": "tsx scripts/seedAdmin.ts",
+    "typecheck": "tsc --noEmit",
+    "cdk:build": "tsc -p cdk/tsconfig.json",
+    "cdk:synth": "cdk synth -a \"npx ts-node cdk/bin/app.ts\"",
+    "cdk:deploy": "cdk deploy --require-approval never -a \"npx ts-node cdk/bin/app.ts\""
+  },
+  "dependencies": {
+    "@aws-sdk/client-cognito-identity-provider": "^3.1037.0",
+    "@aws-sdk/client-dynamodb": "^3.1037.0",
+    "@aws-sdk/client-sesv2": "^3.1037.0",
+    "@aws-sdk/lib-dynamodb": "^3.1037.0",
+    "@types/bcryptjs": "^2.4.6",
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^17.2.3",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^9.1.5",
+    "next": "^16.1.6",
+    "pdf-lib": "^1.17.1",
+    "tsx": "^4.21.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/aws-lambda": "^8.10.147",
+    "@types/jsonwebtoken": "^9.0.10",
+    "aws-cdk": "^2.1020.2",
+    "aws-cdk-lib": "^2.204.0",
+    "constructs": "^10.4.2",
+    "esbuild": "^0.25.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5"
+  }
+}

@@ -1,0 +1,131 @@
+.products {
+  min-height: 100vh;
+}
+
+.hero {
+  background: var(--light-color);
+  color: var(--text-dark);
+  padding: 100px 0 80px;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  opacity: 0;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  opacity: 0;
+  color: var(--text-light);
+}
+
+.productsList {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.productItem {
+  background: var(--light-color);
+  border-radius: 15px;
+  margin-bottom: 40px;
+  overflow: hidden;
+  animation: fadeInUp 0.8s ease-out forwards;
+  transition: all 0.3s ease;
+}
+
+.productItem:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-5px);
+}
+
+.productContent {
+  padding: 50px;
+}
+
+.productIcon {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.productContent h2 {
+  font-size: 2rem;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+}
+
+.productDesc {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.productFeatures,
+.productIdealFor {
+  margin-bottom: 30px;
+}
+
+.productFeatures h3,
+.productIdealFor h3 {
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.productFeatures ul {
+  list-style: none;
+  padding: 0;
+}
+
+.productFeatures li {
+  padding: 10px 0;
+  padding-left: 30px;
+  position: relative;
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+.productFeatures li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--secondary-color);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.productIdealFor p {
+  color: var(--text-light);
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .productContent {
+    padding: 30px 20px;
+  }
+
+  .productContent h2 {
+    font-size: 1.5rem;
+  }
+
+  .productDesc {
+    font-size: 1rem;
+  }
+}

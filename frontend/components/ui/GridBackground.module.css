@@ -1,0 +1,54 @@
+.container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 50%, #f0f2f5 100%);
+  overflow: hidden;
+}
+
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-position: -1px -1px;
+  animation: gridMove 20s linear infinite;
+}
+
+.grid::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(0, 102, 204, 0.15) 0%,
+    transparent 50%
+  );
+}
+
+.grid::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 80% 20%,
+    rgba(0, 183, 122, 0.1) 0%,
+    transparent 40%
+  );
+}
+
+@keyframes gridMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 10;
+}

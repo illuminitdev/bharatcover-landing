@@ -1,0 +1,89 @@
+.whyPage {
+  min-height: 100vh;
+}
+
+.hero {
+  background: var(--light-color);
+  color: var(--text-dark);
+  padding: 100px 0 80px;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  opacity: 0;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  opacity: 0;
+  color: var(--text-light);
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.reasonsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.reasonCard {
+  background: var(--light-color);
+  padding: 40px 30px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+.reasonCard:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+  background: var(--white);
+}
+
+.reasonIcon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.reasonCard h3 {
+  font-size: 1.3rem;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+}
+
+.reasonCard p {
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+@media (max-width: 1024px) {
+  .reasonsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .reasonsGrid {
+    grid-template-columns: 1fr;
+  }
+}
