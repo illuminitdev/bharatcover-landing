@@ -2,14 +2,13 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { hideGlobalSiteChrome } from '@/lib/sales-funnel-paths';
 import styles from './Footer.module.css';
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
 export default function Footer() {
   const pathname = usePathname();
-  const isCheckoutFlow = pathname.startsWith('/sales/products') || 
-                         pathname.startsWith('/sales/contact') || 
-                         pathname.startsWith('/sales/checkout');
+  const isCheckoutFlow = hideGlobalSiteChrome(pathname);
 
   if (isCheckoutFlow) return null;
 
