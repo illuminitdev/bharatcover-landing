@@ -1,250 +1,301 @@
-import CTAButton from '@/components/CTAButton';
+import Link from 'next/link';
 import styles from './page.module.css';
-import Image from 'next/image';
-import { HiOfficeBuilding, HiUserGroup } from 'react-icons/hi';
-import { FaHandshake, FaGlobeAmericas, FaShieldAlt, FaBriefcase, FaTrophy, FaDollarSign, FaBullseye, FaBolt, FaRocket, FaCheckCircle, FaArrowRight } from 'react-icons/fa';
-import { MdLocalHospital, MdHealthAndSafety } from 'react-icons/md';
-import { GiGearStickPattern } from 'react-icons/gi';
-import { BiSpa } from 'react-icons/bi';
-import { LampEffect } from '@/components/ui/LampEffect';
-import { GridBackground } from '@/components/ui/GridBackground';
-import { GlowCard } from '@/components/ui/GlowCard';
-import { AnimatedCounter } from '@/components/ui/AnimatedCounter';
-import { TextGenerateEffect } from '@/components/ui/TextGenerateEffect';
-import { MovingBorderButton } from '@/components/ui/MovingBorderButton';
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
 
 export default function Home() {
   return (
     <div className={styles.home}>
-      {/* Full-Screen Hero Section */}
-      <LampEffect>
-        <GridBackground>
-          <div className={styles.heroContainer}>
-            <div className="container">
-              <div className={styles.heroContent}>
-                <div className={styles.heroText}>
-                  <h1 className={styles.heroTitle}>
-                    Smart Insurance Care for Your <span className={styles.gradient}>Workforce</span>
-                  </h1>
-                  <p className={styles.heroDescription}>
-                    Comprehensive Personal Accident and Employee Insurance Solutions designed for
-                    growing businesses, MSMEs, and large enterprises.
-                  </p>
-                  <div className={styles.heroButtons}>
-                    <MovingBorderButton href="/sales" variant="primary" size="large">
-                      Sales
-                    </MovingBorderButton>
-                    <MovingBorderButton href="/contact" variant="primary" size="large">
-                      Get a Quote
-                    </MovingBorderButton>
-                    <MovingBorderButton href="/contact" variant="secondary" size="large">
-                      Talk to an Expert
-                    </MovingBorderButton>
-                  </div>
-                </div>
+      <section className={styles.hero}>
+        <div className={styles.heroInner}>
+          <div className={styles.heroLeft}>
+            <div className={styles.heroBadge}>India&apos;s #1 affordable insurance platform</div>
+            <h1 className={styles.heroTitle}>
+              India&apos;s Most <span>Affordable</span> Insurance.
+              <br />
+              For Everyone.
+            </h1>
+            <p className={styles.heroDescription}>
+              Plans from Rs 85/year. Trusted by individuals, families and businesses across India.
+            </p>
+            <div className={styles.heroCards}>
+              <Link href="/personal" className={styles.heroCard}>
+                <span className={styles.heroCardIcon}>🛡️</span>
+                <div className={styles.heroCardTitle}>Personal Cover</div>
+                <div className={styles.heroCardSub}>Health · Accident · Daily Cash</div>
+                <span className={styles.heroCardCta}>Explore Personal Plans →</span>
+              </Link>
+              <Link href="/business" className={styles.heroCard}>
+                <span className={styles.heroCardIcon}>🏢</span>
+                <div className={styles.heroCardTitle}>Business Cover</div>
+                <div className={styles.heroCardSub}>Group Health · PA · Workmen Comp</div>
+                <span className={styles.heroCardCta}>Explore Business Plans →</span>
+              </Link>
+            </div>
+            <div className={styles.heroTrust}>
+              Backed by Magma General · SBI General · Go Digit · IRDAI Regulated
+            </div>
+          </div>
+          <div className={styles.heroRight}>
+            <div className={styles.heroVisual}>
+              <img
+                src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80"
+                alt="Happy families protected by BharatCover"
+              />
+              <div className={styles.priceCard}>
+                <div className={styles.priceLabel}>Plans Starting</div>
+                <div className={styles.priceValue}>Rs 85</div>
+                <div className={styles.priceSub}>For individuals & families</div>
               </div>
             </div>
           </div>
-        </GridBackground>
-      </LampEffect>
-
-      {/* Trust Bar */}
-      <section className={styles.trustBar}>
-        <div className="container">
-          <div className={styles.trustItems}>
-            <div className={styles.trustItem}>
-              <span className={styles.trustIcon}><HiOfficeBuilding /></span>
-              <p><strong><AnimatedCounter value={100} suffix="+" /></strong> Companies</p>
-            </div>
-            <div className={styles.trustItem}>
-              <span className={styles.trustIcon}><HiUserGroup /></span>
-              <p><strong><AnimatedCounter value={10000} suffix="+" /></strong> Employees</p>
-            </div>
-            <div className={styles.trustItem}>
-              <span className={styles.trustIcon}><FaHandshake /></span>
-              <p><strong><AnimatedCounter value={61} suffix="+" /></strong> Insurance Partners</p>
-            </div>
-            <div className={styles.trustItem}>
-              <span className={styles.trustIcon}><FaGlobeAmericas /></span>
-              <p><strong>Pan-India</strong> Reach</p>
-            </div>
-          </div>
         </div>
       </section>
 
-      {/* About Snapshot */}
-      <section className="section">
-        <div className="container">
-          <div className={styles.aboutSnapshot}>
-            <h2 className="section-title">Insurance Solutions Built for Businesses</h2>
-            <p className="section-subtitle">
-              We help organizations safeguard their employees with reliable, cost-effective insurance
-              coverage. From Personal Accident policies to complete employee benefit programs, we
-              deliver protection with simplicity and trust.
-            </p>
-          </div>
+      <section className={styles.partnerBar}>
+        <div className={styles.partnerInner}>
+          <span className={styles.partnerLabel}>Our Insurance Partners</span>
+          <div className={styles.partnerPill}>Magma General Insurance</div>
+          <div className={styles.partnerPill}>SBI General Insurance</div>
+          <div className={styles.partnerPill}>Go Digit General Insurance</div>
         </div>
       </section>
 
-      {/* Products Overview */}
-      <section className={`section ${styles.productsSection}`}>
-        <div className="container">
-          <h2 className="section-title">Our Insurance Products</h2>
-          <p className="section-subtitle">
-            Comprehensive coverage solutions tailored for your business needs
-          </p>
-          <div className={styles.productsGrid}>
-            <GlowCard>
-              <span className={styles.productIcon}><FaShieldAlt /></span>
-              <h3>Personal Accident Insurance</h3>
+      <section className={styles.section}>
+        <div className={styles.sectionInner}>
+          <div className={styles.sectionHead}>
+            <h2>Personal Insurance Plans</h2>
+            <Link href="/personal">View all personal plans →</Link>
+          </div>
+          <div className={styles.twoCol}>
+            <Link href="/personal/accident" className={styles.productCard}>
+              <div className={styles.productBadgeRow}>
+                <span className={styles.productBadge}>SBI General</span>
+                <span className={styles.productBadge}>Go Digit</span>
+              </div>
+              <p className={styles.productType}>Personal Accident</p>
+              <h3>Accident & Disability Cover</h3>
               <p>
-                Round-the-clock protection against accidental death, disability, and medical
-                expenses for employees across industries.
+                Protect yourself and your income against accidental death and disability. Cover
+                starts from day one.
               </p>
-              <CTAButton href="/contact" variant="primary" size="small">
-                Get Quote
-              </CTAButton>
-            </GlowCard>
+              <ul className={styles.pointList}>
+                <li>Accidental Death — 100% sum insured</li>
+                <li>Permanent Total & Partial Disability</li>
+                <li>No waiting period. Cover from Day 1</li>
+                <li>Ages 18-65 · cover Rs 1L-15L</li>
+              </ul>
+              <div className={styles.productBottom}>
+                <div>
+                  <span className={styles.fromLabel}>From</span>
+                  <strong className={styles.fromPrice}>Rs 299</strong>
+                  <span className={styles.fromTenure}>/year</span>
+                </div>
+                <span className={styles.viewBtn}>View Plans →</span>
+              </div>
+            </Link>
+            <Link href="/personal/health-insurance" className={styles.productCard}>
+              <div className={styles.productBadgeRow}>
+                <span className={styles.productBadge}>Magma General Insurance</span>
+              </div>
+              <p className={styles.productType}>Health Insurance</p>
+              <h3>Health & Hospitalisation Cover</h3>
+              <p>
+                Health indemnity plans for individuals and families with in-patient and day care
+                benefits.
+              </p>
+              <ul className={styles.pointList}>
+                <li>In-Patient Hospitalisation — up to SI</li>
+                <li>Pre & Post-Hospitalisation included</li>
+                <li>Individual & Family Floater plans</li>
+                <li>Ages 18-65 · cover Rs 1L-5L</li>
+              </ul>
+              <div className={styles.productBottom}>
+                <div>
+                  <span className={styles.fromLabel}>From</span>
+                  <strong className={styles.fromPrice}>Rs 750</strong>
+                  <span className={styles.fromTenure}>/year</span>
+                </div>
+                <span className={styles.viewBtnAlt}>View Plans →</span>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
 
-            <GlowCard>
-              <span className={styles.productIcon}><MdLocalHospital /></span>
+      <section className={`${styles.section} ${styles.darkSection}`}>
+        <div className={styles.sectionInner}>
+          <div className={styles.sectionHead}>
+            <h2>Business & Institutional Plans</h2>
+            <Link href="/business">View all business plans →</Link>
+          </div>
+          <div className={styles.grid3}>
+            <Link href="/business" className={styles.bizCard}>
+              <span className={styles.bizChip}>Custom Quotes</span>
               <h3>Group Health Insurance</h3>
-              <p>
-                Comprehensive medical coverage for employees and their families with flexible
-                sum insured options.
-              </p>
-              <CTAButton href="/contact" variant="primary" size="small">
-                Get Quote
-              </CTAButton>
-            </GlowCard>
-
-            <GlowCard>
-              <span className={styles.productIcon}><FaBriefcase /></span>
-              <h3>Group Term Life Insurance</h3>
-              <p>
-                Financial security for employees&apos; families in the event of an unfortunate loss.
-              </p>
-              <CTAButton href="/contact" variant="primary" size="small">
-                Get Quote
-              </CTAButton>
-            </GlowCard>
-
-            <GlowCard>
-              <span className={styles.productIcon}><GiGearStickPattern /></span>
-              <h3>Workmen Compensation Insurance</h3>
-              <p>
-                Statutory coverage protecting employers against workplace injury liabilities.
-              </p>
-              <CTAButton href="/contact" variant="primary" size="small">
-                Get Quote
-              </CTAButton>
-            </GlowCard>
-
-            <GlowCard>
-              <span className={styles.productIcon}><MdHealthAndSafety /></span>
-              <h3>OPD and Wellness Plans</h3>
-              <p>
-                Preventive healthcare and outpatient benefits designed to reduce absenteeism and
-                improve productivity.
-              </p>
-              <CTAButton href="/contact" variant="primary" size="small">
-                Get Quote
-              </CTAButton>
-            </GlowCard>
-
-            <GlowCard>
-              <span className={styles.productIcon}><BiSpa /></span>
-              <h3>Customized Corporate Solutions</h3>
-              <p>
-                Tailor-made insurance plans based on industry, workforce size, and risk profile.
-              </p>
-              <CTAButton href="/contact" variant="primary" size="small">
-                Get Quote
-              </CTAButton>
-            </GlowCard>
+              <p>Bulk employee health plans tailored to your organization&apos;s size and needs.</p>
+              <span className={styles.bizLink}>Get Quote →</span>
+            </Link>
+            <Link href="/business" className={styles.bizCard}>
+              <span className={styles.bizChip}>Per Employee Pricing</span>
+              <h3>Group Personal Accident</h3>
+              <p>Accident cover for your entire staff with flexible per-employee pricing.</p>
+              <span className={styles.bizLink}>Get Quote →</span>
+            </Link>
+            <Link href="/business" className={styles.bizCard}>
+              <span className={styles.bizChip}>IRDAI Compliant</span>
+              <h3>Workmen Compensation</h3>
+              <p>Statutory compliance cover for workmen compensation mandated by law.</p>
+              <span className={styles.bizLink}>Get Quote →</span>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className={`section ${styles.whySection}`}>
-        <div className="container">
-          <h2 className="section-title">Why Choose Us</h2>
-          <p className="section-subtitle">
-            Your trusted partner in corporate insurance care
-          </p>
-          <div className={styles.whyGrid}>
-            <div className={styles.whyCard}>
-              <span className={styles.whyIcon}><FaTrophy /></span>
-              <h3>Multiple Insurers</h3>
-              <p>Access to multiple insurance providers under one platform</p>
+      <section className={styles.section} id="about">
+        <div className={styles.sectionInner}>
+          <div className={styles.centerHead}>
+            <h2>Why Thousands Choose Bharat Cover</h2>
+            <div className={styles.headAccent} />
+          </div>
+          <div className={styles.grid4}>
+            <div className={styles.infoCard}>
+              <div className={styles.infoIcon}>💰</div>
+              <h3>Plans from Rs85/year</h3>
+              <p>No-frills, affordable cover that fits every budget — from daily workers to executives.</p>
             </div>
-            <div className={styles.whyCard}>
-              <span className={styles.whyIcon}><FaDollarSign /></span>
-              <h3>Competitive Pricing</h3>
-              <p>Transparent policy terms with the best rates in the market</p>
+            <div className={styles.infoCard}>
+              <div className={styles.infoIcon}>🏆</div>
+              <h3>Trusted Insurers</h3>
+              <p>Backed by Magma General, SBI General & Go Digit — names India trusts for decades.</p>
             </div>
-            <div className={styles.whyCard}>
-              <span className={styles.whyIcon}><FaBullseye /></span>
-              <h3>Dedicated Support</h3>
-              <p>Corporate relationship managers for personalized service</p>
+            <div className={styles.infoCard}>
+              <div className={styles.infoIcon}>⚡</div>
+              <h3>Zero Waiting on PA</h3>
+              <p>Bharat Suraksha Accident covers from Day 1 — no waiting period, no surprises.</p>
             </div>
-            <div className={styles.whyCard}>
-              <span className={styles.whyIcon}><FaBolt /></span>
-              <h3>Fast Claims</h3>
-              <p>End-to-end claims assistance with faster resolution</p>
-            </div>
-            <div className={styles.whyCard}>
-              <span className={styles.whyIcon}><FaRocket /></span>
-              <h3>Quick Onboarding</h3>
-              <p>Faster onboarding and policy issuance process</p>
-            </div>
-            <div className={styles.whyCard}>
-              <span className={styles.whyIcon}><FaCheckCircle /></span>
-              <h3>Compliant Operations</h3>
-              <p>Professional and fully compliant service delivery</p>
+            <div className={styles.infoCard}>
+              <div className={styles.infoIcon}>🇮🇳</div>
+              <h3>Built for Bharat</h3>
+              <p>Products designed for Indian families and businesses, at prices that make sense here.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Claims Assistance Highlight */}
-      <section className={`section ${styles.claimsSection}`}>
-        <div className="container">
-          <h2 className="section-title">Hassle-Free Claims Assistance</h2>
-          <p className="section-subtitle">
-            We provide end-to-end claims assistance to ensure peace of mind
-          </p>
-          <div className={styles.claimsProcess}>
-            <div className={styles.claimsStep}>
-              <span className={styles.stepNumber}>1</span>
-              <h3>Claims Intimation</h3>
-              <p>Report your claim through multiple channels</p>
-            </div>
-            <div className={styles.claimsStep}>
-              <span className={styles.stepNumber}>2</span>
-              <h3>Documentation</h3>
-              <p>Document collection and verification support</p>
-            </div>
-            <div className={styles.claimsStep}>
-              <span className={styles.stepNumber}>3</span>
-              <h3>Insurer Coordination</h3>
-              <p>Direct liaison with insurance company</p>
-            </div>
-            <div className={styles.claimsStep}>
-              <span className={styles.stepNumber}>4</span>
-              <h3>Settlement Support</h3>
-              <p>Regular updates until claim settlement</p>
-            </div>
+      <section className={styles.section} id="claims">
+        <div className={styles.sectionInner}>
+          <div className={styles.centerHead}>
+            <h2>Get Covered in 3 Simple Steps</h2>
+            <div className={styles.headAccent} />
           </div>
-          <div style={{ textAlign: 'center', marginTop: '40px' }}>
-            <CTAButton href="/claims" variant="primary">
-              Know More
-            </CTAButton>
+          <div className={styles.stepsGrid}>
+            <div className={styles.stepCard}>
+              <div className={styles.stepNumber}>1</div>
+              <h3>Choose Your Plan</h3>
+              <p>Browse personal or business plans tailored to your exact needs and budget.</p>
+            </div>
+            <div className={styles.stepCard}>
+              <div className={styles.stepNumber}>2</div>
+              <h3>Get Your Quote</h3>
+              <p>Instant pricing with no hidden fees. What you see is exactly what you pay.</p>
+            </div>
+            <div className={styles.stepCard}>
+              <div className={styles.stepNumber}>3</div>
+              <h3>Stay Protected</h3>
+              <p>Policy issued immediately. Coverage starts right away — no delays, no paperwork.</p>
+            </div>
           </div>
         </div>
       </section>
 
+      <section className={styles.statsStrip}>
+        <div className={styles.sectionInner}>
+          <div className={styles.grid4}>
+            <div className={styles.statItem}><strong>Rs 85</strong><span>Lowest Annual Premium</span></div>
+            <div className={styles.statItem}><strong>4</strong><span>Products Across Personal & Business</span></div>
+            <div className={styles.statItem}><strong>18-65</strong><span>Age Coverage Range</span></div>
+            <div className={styles.statItem}><strong>3</strong><span>Trusted Insurer Partners</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.ctaBand}>
+        <div className={styles.sectionInner}>
+          <h2>Ready to Get Covered?</h2>
+          <p>Join thousands of Indians protected by Bharat Cover</p>
+          <div className={styles.bottomCtas}>
+            <Link href="/personal" className={styles.ctaPrimary}>
+              Get Personal Quote
+            </Link>
+            <Link href="/business" className={styles.ctaSecondaryDark}>
+              Get Business Quote
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.homeFooter}>
+        <div className={styles.sectionInner}>
+          <div className={styles.footerGrid}>
+            <div>
+              <h4>BharatCover</h4>
+              <p>
+                IRDAI-regulated insurance distribution platform. Policies underwritten by Magma
+                General, SBI General and Go Digit General Insurance.
+              </p>
+            </div>
+            <div>
+              <h5>Personal Plans</h5>
+              <Link href="/personal">Bharat Arogya Individual</Link>
+              <Link href="/personal">Bharat Arogya Family Floater</Link>
+              <Link href="/personal/accident">Bharat Suraksha Accident</Link>
+              <Link href="/personal/health-quote">Bharat Suraksha Daily Cash</Link>
+            </div>
+            <div>
+              <h5>Business Plans</h5>
+              <Link href="/business">Group Health Insurance</Link>
+              <Link href="/business">Group Personal Accident</Link>
+              <Link href="/business">School & College PA</Link>
+              <Link href="/business">Workmen Compensation</Link>
+            </div>
+            <div>
+              <h5>Support</h5>
+              <Link href="/personal/contact">Get a Quote</Link>
+              <Link href="/#claims">Claims Support</Link>
+              <Link href="/#about">About Us</Link>
+              <Link href="/business/contact">Contact Us</Link>
+            </div>
+            <div>
+              <h5>Follow Us</h5>
+              <div className={styles.socialLinks}>
+                <a className={styles.socialLink} href="https://www.facebook.com/profile.php?id=61563633155912" target="_blank" rel="noopener noreferrer">
+                  <FaFacebookF className={styles.socialIcon} /> Facebook
+                </a>
+                <a className={styles.socialLink} href="https://www.instagram.com/bharatcover_official/" target="_blank" rel="noopener noreferrer">
+                  <FaInstagram className={styles.socialIcon} /> Instagram
+                </a>
+                <a className={styles.socialLink} href="https://www.linkedin.com/company/bharatcover/" target="_blank" rel="noopener noreferrer">
+                  <FaLinkedinIn className={styles.socialIcon} /> LinkedIn
+                </a>
+                <a className={styles.socialLink} href="https://www.youtube.com/@bharatcover_official" target="_blank" rel="noopener noreferrer">
+                  <FaYoutube className={styles.socialIcon} /> YouTube
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className={styles.footerBottom}>
+            <p className={styles.footerBottomText}>
+              © 2024 BharatCover Insurance Brokers Pvt. Ltd. IRDAI Registration No. XXXXXX. All rights reserved.
+            </p>
+            <div className={styles.footerBottomLinks}>
+              <Link href="/privacy">Privacy Policy</Link>
+              <Link href="/terms">Terms of Use</Link>
+              <Link href="#">Cookie Policy</Link>
+              <Link href="#">Disclaimer</Link>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

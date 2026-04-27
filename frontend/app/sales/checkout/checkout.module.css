@@ -10,6 +10,20 @@
   margin: 0 auto;
 }
 
+.brandLink {
+  display: block;
+  align-items: center;
+  text-decoration: none;
+  width: fit-content;
+  margin: 0 0 10px;
+}
+
+.brandLogo {
+  width: clamp(140px, 20vw, 220px);
+  height: auto;
+  display: block;
+}
+
 .backLink {
   display: inline-flex;
   align-items: center;
@@ -634,6 +648,92 @@
   margin: 0 0 14px;
 }
 
+/* ── Login credentials box (shown after policy issuance) ── */
+.loginCredentialsBox {
+  margin-top: 28px;
+  border: 2px solid #2563eb;
+  border-radius: 12px;
+  padding: 20px 24px;
+  background: #eff6ff;
+}
+
+.loginCredentialsTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1d4ed8;
+  margin: 0 0 6px;
+}
+
+.loginCredentialsSubtitle {
+  font-size: 0.85rem;
+  color: #475569;
+  margin: 0 0 16px;
+  line-height: 1.5;
+}
+
+.loginCredentialsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.loginCredentialRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.loginCredentialLabel {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #64748b;
+  min-width: 140px;
+  padding-top: 2px;
+  flex-shrink: 0;
+}
+
+.loginCredentialValue {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #0f172a;
+  word-break: break-all;
+}
+
+.loginCredentialPassword {
+  font-family: ui-monospace, 'Cascadia Code', 'Fira Code', monospace;
+  letter-spacing: 0.08em;
+  font-size: 1rem;
+  color: #1d4ed8;
+  background: #dbeafe;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.loginCredentialsNote {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin: 0 0 16px;
+}
+
+.loginCredentialsBtn {
+  display: inline-block;
+  padding: 10px 22px;
+  background: #2563eb;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.loginCredentialsBtn:hover {
+  background: #1d4ed8;
+}
+
 .navWideRow {
   width: 100%;
   max-width: 1040px;
@@ -677,5 +777,9 @@
 
   .pageShell {
     padding: 16px 12px 48px;
+  }
+
+  .brandLink {
+    margin-bottom: 8px;
   }
 }

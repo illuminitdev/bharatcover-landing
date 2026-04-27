@@ -1,6 +1,6 @@
 /**
- * Optional “direct” Razorpay checkout for local/dev when guest API (NEXT_PUBLIC_API_URL)
- * is not configured. Gated off in production unless explicitly enabled.
+ * Optional “direct” Razorpay checkout for local/dev fallback.
+ * Gated off in production unless explicitly enabled.
  */
 
 /** Catalog totals incl. GST (rupees) — must match checkout productMap for direct-order validation. */

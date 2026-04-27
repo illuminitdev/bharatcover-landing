@@ -45,4 +45,25 @@ export const paymentService = {
       body: JSON.stringify(payload),
     });
   },
+  createSalesPublicOrder(payload: Record<string, unknown>) {
+    return fetch('/api/sales-public/order', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+  },
+  verifySalesPublicPayment(payload: Record<string, unknown>) {
+    return fetch('/api/sales-public/verify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+  },
+  finalizeSalesPublicAccount(payload: Record<string, unknown>) {
+    return fetch('/api/sales-public/finalize-account', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+  },
 };

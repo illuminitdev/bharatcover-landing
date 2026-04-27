@@ -3,15 +3,31 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import styles from './Footer.module.css';
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import {
+  FaPhoneAlt,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaYoutube,
+} from 'react-icons/fa';
 
 export default function Footer() {
   const pathname = usePathname();
-  const isCheckoutFlow = pathname.startsWith('/sales/products') || 
-                         pathname.startsWith('/sales/contact') || 
-                         pathname.startsWith('/sales/checkout');
+  const isCheckoutFlow =
+    pathname.startsWith('/sales/products') ||
+    pathname.startsWith('/sales/contact') ||
+    pathname.startsWith('/sales/checkout') ||
+    pathname.startsWith('/sales/quote') ||
+    pathname.startsWith('/sales/login') ||
+    pathname.startsWith('/sales/my-policies') ||
+    pathname.startsWith('/sales/policy/');
+  const isProductPage = pathname?.startsWith('/product_pages');
+  const isHomePage = pathname === '/';
+  const isEmbeddedStaticFlow = pathname.startsWith('/personal') || pathname.startsWith('/business');
 
-  if (isCheckoutFlow) return null;
+  if (isCheckoutFlow || isProductPage || isHomePage || isEmbeddedStaticFlow) return null;
 
   return (
     <footer className={styles.footer}>
@@ -51,6 +67,29 @@ export default function Footer() {
               <li><Link href="/contact">Contact Us</Link></li>
               <li><Link href="/privacy">Privacy Policy</Link></li>
               <li><Link href="/terms">Terms & Conditions</Link></li>
+            </ul>
+            <h4 className={styles.footerTitle}>Follow Us</h4>
+            <ul className={`${styles.footerLinks} ${styles.socialLinks}`}>
+              <li>
+                <a className={styles.socialLink} href="https://www.facebook.com/profile.php?id=61563633155912" target="_blank" rel="noopener noreferrer">
+                  <FaFacebookF className={styles.socialIcon} /> Facebook
+                </a>
+              </li>
+              <li>
+                <a className={styles.socialLink} href="https://www.instagram.com/bharatcover_official/" target="_blank" rel="noopener noreferrer">
+                  <FaInstagram className={styles.socialIcon} /> Instagram
+                </a>
+              </li>
+              <li>
+                <a className={styles.socialLink} href="https://www.linkedin.com/company/bharatcover/" target="_blank" rel="noopener noreferrer">
+                  <FaLinkedinIn className={styles.socialIcon} /> LinkedIn
+                </a>
+              </li>
+              <li>
+                <a className={styles.socialLink} href="https://www.youtube.com/@bharatcover_official" target="_blank" rel="noopener noreferrer">
+                  <FaYoutube className={styles.socialIcon} /> YouTube
+                </a>
+              </li>
             </ul>
           </div>
 

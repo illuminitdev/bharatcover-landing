@@ -43,7 +43,7 @@ export const seoConfig = {
       legalName: this.businessInfo.legalName,
       description: this.businessInfo.description,
       url: this.siteUrl,
-      logo: `${this.siteUrl}/images/logo.png`,
+      logo: `${this.siteUrl}/logo.png`,
       image: `${this.siteUrl}/images/og-image.jpg`,
       email: this.businessInfo.email,
       telephone: this.businessInfo.phone,

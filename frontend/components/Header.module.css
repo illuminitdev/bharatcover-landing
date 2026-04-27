@@ -84,6 +84,72 @@
   width: 100%;
 }
 
+.dropdown {
+  position: relative;
+}
+
+.dropdownTrigger {
+  color: var(--text-light);
+  font-weight: 500;
+  font-size: 1rem;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  position: relative;
+  padding: 0;
+}
+
+.dropdownTrigger::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  transition: width 0.3s ease;
+}
+
+.dropdownTrigger:hover {
+  color: var(--text-dark);
+}
+
+.dropdownTrigger:hover::after,
+.dropdownTrigger[aria-expanded='true']::after {
+  width: 100%;
+}
+
+.dropdownPanel {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;
+  min-width: 220px;
+  padding: 8px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 1005;
+}
+
+.dropdownLink {
+  display: block;
+  font-size: 0.92rem;
+  color: var(--text-light);
+  border-radius: 8px;
+  padding: 8px 10px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.dropdownLink:hover {
+  background: var(--light-bg);
+  color: var(--text-dark);
+}
+
 .ctaButton {
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   color: var(--white);
@@ -179,6 +245,34 @@
 
   .navLink::after {
     display: none;
+  }
+
+  .dropdown {
+    width: 100%;
+  }
+
+  .dropdownTrigger {
+    width: 100%;
+    text-align: left;
+    font-size: 1rem;
+  }
+
+  .dropdownPanel {
+    position: static;
+    min-width: 100%;
+    margin-top: 8px;
+    box-shadow: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .dropdownLink {
+    color: #d7deea;
+  }
+
+  .dropdownLink:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
   }
 
   .ctaButton {

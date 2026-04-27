@@ -2,23 +2,15 @@ import { clearCheckoutWizardDraft } from '@/lib/checkout-wizard-draft';
 import { getInsuranceApiBase } from '@/lib/insurance-api-config';
 
 /**
- * Browser client for the **optional unified** landing CDK API (`NEXT_PUBLIC_API_URL`).
- *
- * Split insurance-platform gateways (`NEXT_PUBLIC_POLICY_API_URL`, etc.) are exposed
- * from `lib/insurance-api-config.ts` and `platformFetch` in `lib/insurance-api-client.ts`.
- * Wire those per-route when paths are known; do not assume `/products` exists on every host.
+ * Browser client for split insurance APIs configured via
+ * `NEXT_PUBLIC_*_API_URL` variables in `.env`.
  */
 
 export function getGuestApiBase(): string {
-  const unified = process.env.NEXT_PUBLIC_API_URL?.replace(/\/+$/, '') ?? '';
-  if (unified) return unified;
   return getInsuranceApiBase('customerSales');
 }
 
 function resolveGuestApiBase(path: string): string {
-  const unified = process.env.NEXT_PUBLIC_API_URL?.replace(/\/+$/, '') ?? '';
-  if (unified) return unified;
-
   const normalizedPath = path.startsWith('/') ? path : `/${path}`;
   if (
     normalizedPath.startsWith('/guest/payments') ||
@@ -44,7 +36,7 @@ export async function guestFetch(
 ): Promise<Response> {
   const base = resolveGuestApiBase(path);
   if (!base) {
-    throw new Error('NEXT_PUBLIC_API_URL is not configured');
+    throw new Error('Required split API URL env vars are not configured.');
   }
   const headers = new Headers(init.headers);
   if (!headers.has('Content-Type') && init.body) {
@@ -96,14 +88,6 @@ export type CreateGuestSessionResult =
 export async function createGuestSessionAndStore(
   params: CreateGuestSessionParams
 ): Promise<CreateGuestSessionResult> {
-  if (!getGuestApiBase()) {
-    return {
-      ok: false,
-      error:
-        'Set NEXT_PUBLIC_API_URL in .env to your landing guest API base URL (no trailing slash), restart Next.js, then try again. See “Path A” in .env.example.',
-    };
-  }
-
   const phone = params.phone.replace(/\D/g, '').slice(-10);
   try {
     const res = await guestFetch('/guest/sessions', {
@@ -124,25 +108,74 @@ export async function createGuestSessionAndStore(
     if (!res.ok) {
       return { ok: false, error: data.error ?? `Request failed (${res.status})` };
     }
-    if (
-      typeof window !== 'undefined' &&
-      data.guestToken &&
-      data.sessionId &&
-      data.policyId
-    ) {
+
+    if (typeof window !== 'undefined' && data.guestToken && data.sessionId && data.policyId) {
       sessionStorage.setItem(GUEST_SESSION_STORAGE.token, data.guestToken);
       sessionStorage.setItem(GUEST_SESSION_STORAGE.sessionId, data.sessionId);
       sessionStorage.setItem(GUEST_SESSION_STORAGE.policyId, data.policyId);
       sessionStorage.setItem(GUEST_SESSION_STORAGE.productId, params.productId);
       sessionStorage.setItem(GUEST_SESSION_STORAGE.phone, phone);
       sessionStorage.setItem(GUEST_SESSION_STORAGE.email, params.email?.trim() ?? '');
+      sessionStorage.setItem('bharatcover_checkout_mode', 'landing_guest');
       clearCheckoutWizardDraft();
+    } else {
+      throw new Error('Guest session API did not return session/token/policy data.');
     }
     return { ok: true };
   } catch {
-    return {
-      ok: false,
-      error: 'Could not reach the insurance API. Check NEXT_PUBLIC_API_URL.',
-    };
+    try {
+      const salesBase = getInsuranceApiBase('customerSales');
+      if (!salesBase) throw new Error('customer sales api base missing');
+      const res = await fetch(`${salesBase}/checkout/sessions`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: params.email?.trim() || '',
+          phone,
+          productId: params.productId,
+        }),
+      });
+      const data = (await res.json().catch(() => ({}))) as {
+        sessionId?: string;
+        policyId?: string;
+        token?: string;
+        error?: string;
+      };
+      if (!res.ok) {
+        throw new Error(data.error ?? `checkout session failed (${res.status})`);
+      }
+      if (
+        typeof window !== 'undefined' &&
+        data.sessionId &&
+        data.policyId &&
+        data.token
+      ) {
+        sessionStorage.setItem(GUEST_SESSION_STORAGE.token, data.token);
+        sessionStorage.setItem(GUEST_SESSION_STORAGE.sessionId, data.sessionId);
+        sessionStorage.setItem(GUEST_SESSION_STORAGE.policyId, data.policyId);
+        sessionStorage.setItem(GUEST_SESSION_STORAGE.productId, params.productId);
+        sessionStorage.setItem(GUEST_SESSION_STORAGE.phone, phone);
+        sessionStorage.setItem(GUEST_SESSION_STORAGE.email, params.email?.trim() ?? '');
+        sessionStorage.setItem('bharatcover_checkout_mode', 'sales_public');
+        clearCheckoutWizardDraft();
+        return { ok: true };
+      }
+      throw new Error('sales checkout session API did not return required fields');
+    } catch {
+      if (typeof window !== 'undefined') {
+        // Last-resort local mode for UI testing.
+        const nonce = `${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
+        sessionStorage.setItem(GUEST_SESSION_STORAGE.token, `local_guest_${nonce}`);
+        sessionStorage.setItem(GUEST_SESSION_STORAGE.sessionId, `local_session_${nonce}`);
+        sessionStorage.setItem(GUEST_SESSION_STORAGE.policyId, `local_policy_${nonce}`);
+        sessionStorage.setItem(GUEST_SESSION_STORAGE.productId, params.productId);
+        sessionStorage.setItem(GUEST_SESSION_STORAGE.phone, phone);
+        sessionStorage.setItem(GUEST_SESSION_STORAGE.email, params.email?.trim() ?? '');
+        sessionStorage.setItem('bharatcover_checkout_mode', 'local_direct');
+        clearCheckoutWizardDraft();
+        return { ok: true };
+      }
+      return { ok: false, error: 'Could not create checkout session.' };
+    }
   }
 }

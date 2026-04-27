@@ -14,7 +14,6 @@ export type EkycVerificationStepProps = {
   dummyBusy: boolean;
   kycError: string | null;
   dummyError: string | null;
-  apiBasePresent: boolean;
   dummyUiEnabled: boolean;
   /** `dummy_kyc` | `surepass_digilocker` | '' */
   kycProvider?: string;
@@ -31,7 +30,6 @@ export function EkycVerificationStep({
   dummyBusy,
   kycError,
   dummyError,
-  apiBasePresent,
   dummyUiEnabled,
   kycProvider = '',
   onStartDigilocker,
@@ -108,12 +106,6 @@ export function EkycVerificationStep({
           <code>.env</code> (see <code>.env.example</code>), restart Next.js, and set{' '}
           <code>NEXT_PUBLIC_SITE_URL</code> to this site&apos;s origin so redirects are allowed.
           {dummyUiEnabled && allowDummy ? ' Use dummy KYC below for local testing without keys.' : ' You can still continue for UI testing.'}
-        </p>
-      )}
-      {!apiBasePresent && (
-        <p className={checkoutStyles.wizardLead} style={{ marginTop: 16 }}>
-          <strong style={{ color: '#374151' }}>Guest API:</strong> set <code>NEXT_PUBLIC_API_URL</code> for guest
-          session and Razorpay after the contact flow.
         </p>
       )}
     </>
