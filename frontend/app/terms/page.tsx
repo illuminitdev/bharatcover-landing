@@ -1,153 +1,141 @@
-import Link from 'next/link';
-import { FiArrowLeft, FiFileText } from 'react-icons/fi';
-import '@/styles/policy.css';
+import type { Metadata } from 'next';
+import styles from './terms.module.css';
+
+export const metadata: Metadata = {
+  title: 'Terms of Use',
+  description: 'Terms of Use for BharatCover Insurance Brokers Pvt. Ltd.',
+};
 
 export default function TermsPage() {
   return (
-    <div className="policy-page">
-      <div className="policy-container">
-        <div className="policy-card">
-          <Link href="/" className="policy-back-link">
-            <FiArrowLeft />
-            Back to Home
-          </Link>
-
-          <div className="policy-header">
-            <div className="policy-icon policy-icon-terms">
-              <FiFileText />
-            </div>
-            <div className="policy-title-wrapper">
-              <h1 className="policy-title">Terms and Conditions</h1>
-              <p className="policy-updated">
-                Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-              </p>
-            </div>
-          </div>
-
-          <div className="policy-content">
-            <section className="policy-section">
-              <h2 className="policy-section-title">1. Agreement to Terms</h2>
-              <p>
-                By accessing and using Bharat Cover services, you agree to be bound by these Terms and Conditions.
-                If you disagree with any part of these terms, please do not use our services.
-              </p>
-            </section>
-
-            <section className="policy-section">
-              <h2 className="policy-section-title">2. Insurance Services</h2>
-              <p>
-                Bharat Cover provides group health insurance and employee benefits solutions to businesses. Our services include:
-              </p>
-              <ul>
-                <li>Group Health Insurance (GHI)</li>
-                <li>Group Term Life Insurance (GTL)</li>
-                <li>Group Personal Accident (GPA)</li>
-                <li>Outpatient Department (OPD) Coverage</li>
-                <li>Workmen Compensation Insurance</li>
-              </ul>
-            </section>
-
-            <section className="policy-section">
-              <h2 className="policy-section-title">3. Eligibility</h2>
-              <p>
-                Our services are available to registered businesses and organizations seeking employee benefit solutions.
-                Individual applications must be submitted through an employer or organization.
-              </p>
-            </section>
-
-            <section className="policy-section">
-              <h2 className="policy-section-title">4. Information Accuracy</h2>
-              <p>
-                You agree to provide accurate, current, and complete information when submitting inquiries or applications.
-                Any false or misleading information may result in termination of services or denial of claims.
-              </p>
-            </section>
-
-            <section className="policy-section">
-              <h2 className="policy-section-title">5. Policy Terms</h2>
-              <p>
-                Specific insurance policies are subject to individual terms and conditions as outlined in the policy documents.
-                These Terms and Conditions apply to the use of our website and inquiry services.
-              </p>
-            </section>
-
-            <section className="policy-section">
-              <h2 className="policy-section-title">6. Pricing and Payment</h2>
-              <p>
-                Insurance premiums and pricing are determined based on various factors including number of employees,
-                coverage type, and risk assessment. Final pricing will be provided in writing after assessment of your requirements.
-              </p>
-            </section>
-
-            <section className="policy-section">
-              <h2 className="policy-section-title">7. Claims Process</h2>
-              <p>
-                All insurance claims must be submitted according to the procedures outlined in your policy documents.
-                Claims are subject to verification and approval by the insurance provider.
-              </p>
-            </section>
-
-            <section className="policy-section">
-              <h2 className="policy-section-title">8. Limitation of Liability</h2>
-              <p>
-                Bharat Cover acts as an intermediary between clients and insurance providers. We are not liable for
-                any claims denied by insurance companies or disputes arising from policy coverage.
-              </p>
-            </section>
-
-            <section className="policy-section">
-              <h2 className="policy-section-title">9. Intellectual Property</h2>
-              <p>
-                All content on this website, including text, graphics, logos, and images, is the property of Bharat Cover
-                and protected by copyright laws. Unauthorized use is prohibited.
-              </p>
-            </section>
-
-            <section className="policy-section">
-              <h2 className="policy-section-title">10. Privacy</h2>
-              <p>
-                Your use of our services is also governed by our Privacy Policy. Please review our{' '}
-                <Link href="/privacy" className="policy-link">Privacy Policy</Link>
-                {' '}to understand how we collect and use your information.
-              </p>
-            </section>
-
-            <section className="policy-section">
-              <h2 className="policy-section-title">11. Modifications</h2>
-              <p>
-                We reserve the right to modify these Terms and Conditions at any time. Changes will be effective
-                immediately upon posting on our website. Continued use of our services constitutes acceptance of modified terms.
-              </p>
-            </section>
-
-            <section className="policy-section">
-              <h2 className="policy-section-title">12. Governing Law</h2>
-              <p>
-                These Terms and Conditions are governed by and construed in accordance with the laws of India.
-                Any disputes shall be subject to the exclusive jurisdiction of the courts in [Your City/State].
-              </p>
-            </section>
-
-            <section className="policy-section">
-              <h2 className="policy-section-title">13. Contact Information</h2>
-              <p>For questions regarding these Terms and Conditions, please contact us at:</p>
-              <div className="policy-contact-box">
-                <p className="policy-contact-name">Bharat Cover</p>
-                <p>Email: info@bharatcover.net</p>
-                <p>Phone: +91 7680064255</p>
-              </div>
-            </section>
-          </div>
-
-          <div className="policy-footer">
-            <div className="policy-footer-box">
-              <p className="policy-footer-text">
-                By using our services, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions.
-              </p>
-            </div>
-          </div>
+    <div className={styles.page}>
+      <section className={styles.hero}>
+        <div className={styles.heroInner}>
+          <span className={styles.heroTag}>LEGAL</span>
+          <h1 className={styles.heroTitle}>Terms of Use</h1>
+          <p className={styles.heroSub}>
+            Please review the terms governing access to and use of BharatCover services.
+          </p>
+          <p className={styles.heroMeta}>Effective Date: 01 January 2026 · Updated: 28 April 2026</p>
         </div>
-      </div>
+      </section>
+
+      <main className={styles.contentWrap}>
+        <div className={styles.contentInner}>
+          <article className={styles.sectionCard}>
+            <h2>1. About BharatCover</h2>
+            <p>
+              BharatCover Insurance Brokers Pvt. Ltd. is an IRDAI-registered insurance intermediary
+              offering insurance advisory and distribution services for individuals and businesses.
+            </p>
+            <div className={styles.highlight}>
+              By accessing our website or using our services, you agree to these Terms of Use.
+            </div>
+          </article>
+
+          <article className={styles.sectionCard}>
+            <h2>2. Nature of Our Services</h2>
+            <ul>
+              <li>Insurance advisory, comparison, and policy facilitation services.</li>
+              <li>Assistance in proposal submission, underwriting, and renewals.</li>
+              <li>Claims support coordination with insurers and TPAs.</li>
+            </ul>
+            <p>
+              Final policy issuance and claims decision remain subject to the insurer’s terms and
+              underwriting guidelines.
+            </p>
+          </article>
+
+          <article className={styles.sectionCard}>
+            <h2>3. Accuracy of Information</h2>
+            <p>
+              You must provide complete and accurate information. Incorrect or misleading details may
+              impact quote accuracy, policy issuance, or claim outcomes.
+            </p>
+          </article>
+
+          <article className={styles.sectionCard}>
+            <h2>4. User Responsibilities</h2>
+            <ul>
+              <li>Use this website only for lawful and genuine business purposes.</li>
+              <li>Do not misuse platform content, services, or communication channels.</li>
+              <li>Maintain confidentiality of any account credentials you use.</li>
+            </ul>
+          </article>
+
+          <article className={styles.sectionCard}>
+            <h2>5. IRDAI and Regulatory Compliance</h2>
+            <p>
+              BharatCover operates in accordance with applicable Indian laws and IRDAI regulations.
+              Insurance products are underwritten by licensed insurers and governed by respective
+              policy wordings.
+            </p>
+          </article>
+
+          <article className={styles.sectionCard}>
+            <h2>6. Free-Look Period</h2>
+            <p>
+              Eligible policies may include a free-look period in line with insurer terms and IRDAI
+              norms, allowing cancellation under specified conditions.
+            </p>
+          </article>
+
+          <article className={styles.sectionCard}>
+            <h2>7. Premiums and Payments</h2>
+            <ul>
+              <li>Premiums are determined by insurers based on submitted risk details.</li>
+              <li>Policy benefits commence only after successful payment and issuance.</li>
+              <li>Taxes, levies, and charges apply as per prevailing regulations.</li>
+            </ul>
+          </article>
+
+          <article className={styles.sectionCard}>
+            <h2>8. Intellectual Property</h2>
+            <p>
+              All website content, branding, and design elements are protected intellectual property of
+              BharatCover and may not be copied or reused without permission.
+            </p>
+          </article>
+
+          <article className={styles.sectionCard}>
+            <h2>9. Limitation of Liability</h2>
+            <p>
+              BharatCover acts as an intermediary. We are not liable for insurer underwriting decisions,
+              policy exclusions, claim repudiations, or consequential losses arising from third-party
+              actions.
+            </p>
+          </article>
+
+          <article className={styles.sectionCard}>
+            <h2>10. Grievance Redressal</h2>
+            <p>Email: support@bharatcover.net</p>
+            <p>Phone: +91 76800 64255</p>
+          </article>
+
+          <article className={styles.sectionCard}>
+            <h2>11. Governing Law</h2>
+            <p>
+              These terms are governed by the laws of India. Jurisdiction for disputes will be as
+              applicable under law.
+            </p>
+          </article>
+
+          <article className={styles.sectionCard}>
+            <h2>12. Changes to These Terms</h2>
+            <p>
+              We may update these terms periodically. Continued use of our services after updates
+              constitutes acceptance of revised terms.
+            </p>
+          </article>
+
+          <article className={styles.sectionCard}>
+            <h2>13. Contact</h2>
+            <p>BharatCover Insurance Brokers Pvt. Ltd.</p>
+            <p>Email: support@bharatcover.net</p>
+            <p>Phone: +91 76800 64255</p>
+          </article>
+        </div>
+      </main>
     </div>
   );
 }

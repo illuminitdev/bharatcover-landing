@@ -13,16 +13,21 @@ export default function HealthQuoteClient() {
           <div>
             <p className={styles.planTag}>Bharat Arogya Individual Plan</p>
             <h1 className={styles.heroTitle}>Bharat Arogya Individual Plan</h1>
-            <p className={styles.heroSubtitle}>Start your policy application in 3 easy steps</p>
+            <p className={styles.heroSubtitle}>
+              Comprehensive health indemnity cover with cashless hospitalisation, day care, pre &amp;
+              post-hospitalisation benefits.
+            </p>
             <div className={styles.heroChips}>
-              <span className={styles.chip}>Personal Details</span>
-              <span className={styles.chip}>Nominee</span>
-              <span className={styles.chip}>Review & Confirm</span>
+              <span className={styles.chip}>🏥 Cashless Hospitals</span>
+              <span className={styles.chip}>📆 1-Year Tenure</span>
+              <span className={styles.chip}>⚡ Instant Policy</span>
+              <span className={styles.chip}>💰 SI: ₹3 Lakh</span>
             </div>
           </div>
           <div className={styles.heroPrice}>
             <p>Annual Premium</p>
-            <strong>Rs 1,250</strong>
+            <strong>₹1,250</strong>
+            <span>excl. 18% GST</span>
           </div>
         </div>
       </section>

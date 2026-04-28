@@ -34,15 +34,6 @@ export default function SalesPage() {
 
   return (
     <div className={styles.salesBody}>
-      {/* Breadcrumb */}
-      <div className={styles.breadcrumb}>
-        <Link href="/">Home</Link>
-        <span className={styles.sep}>›</span>
-        <a href="#">Personal Insurance</a>
-        <span className={styles.sep}>›</span>
-        <span className={styles.current}>Health Protector Plans</span>
-      </div>
-
       {/* Product Tabs */}
       <div className={styles.prodTabBar}>
         <div 
@@ -242,7 +233,7 @@ export default function SalesPage() {
                     href={`/sales/quote?si=${paSI}&gst=${includeGstPa ? '1' : '0'}`}
                     className={styles.quoteBtn}
                   >
-                    Get Instant Quote →
+                    Buy Now →
                   </Link>
                   <button type="button" className={styles.talkBtn}>📞 Speak to an Advisor</button>
                 </div>
@@ -364,37 +355,6 @@ export default function SalesPage() {
           </div>
         </div>
       )}
-      {/* Footer */}
-      <footer className={styles.footer}>
-        <div className={styles.footerTop}>
-          <div className={styles.footerBrand}>
-            <div className={styles.footerBrandName}>Bharat<span>Cover</span></div>
-            <p>Your trusted partner in corporate insurance care. We simplify insurance for businesses and their most valuable asset — their people.</p>
-          </div>
-          <div className={styles.footerCol}>
-            <h5>Products</h5>
-            <a href="#">Personal Accident</a>
-            <a href="#">Daily Cash</a>
-            <a href="#">Health Insurance</a>
-          </div>
-          <div className={styles.footerCol}>
-            <h5>Company</h5>
-            <a href="#">About Us</a>
-            <a href="#">Why Choose Us</a>
-            <a href="#">Contact</a>
-          </div>
-          <div className={styles.footerCol}>
-            <h5>Claims</h5>
-            <a href="#">Process</a>
-            <a href="#">Support</a>
-            <a href="#">Partners</a>
-          </div>
-        </div>
-        <div className={styles.footerBottom}>
-          <div>&copy; 2026 BharatCover. All rights reserved.</div>
-          <div>IRDA Licensed Intermediary</div>
-        </div>
-      </footer>
     </div>
   );
 }

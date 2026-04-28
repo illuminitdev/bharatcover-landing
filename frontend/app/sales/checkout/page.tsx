@@ -2,7 +2,6 @@
 
 import { Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { FaArrowLeft, FaArrowRight, FaCheck, FaChevronLeft, FaCreditCard, FaLock, FaShieldAlt } from 'react-icons/fa';
 import { CheckoutStepper } from '@/components/sales/CheckoutStepper';
@@ -1517,16 +1516,6 @@ function CheckoutContent() {
   return (
     <div className={styles.pageShell}>
       <div className={styles.inner}>
-        <Link href="/" className={styles.brandLink} aria-label="Go to BharatCover home">
-          <Image
-            src="/logo.png"
-            alt="BharatCover"
-            width={220}
-            height={55}
-            priority
-            className={styles.brandLogo}
-          />
-        </Link>
         <Link href="/sales" className={styles.backLink}>
           <FaChevronLeft aria-hidden style={{ fontSize: 11 }} />
           Back to Products
