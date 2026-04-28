@@ -17,9 +17,7 @@ export const contactPageData: ContactPageData = {
     description:
       'Leave your details and our licensed advisors will call back within 2 hours — no spam, no pushy sales.',
     channels: [
-      { icon: '📞', label: '1800-123-456 (Toll Free)', href: 'tel:+911800123456' },
-      { icon: '💬', label: 'WhatsApp Us', href: 'https://wa.me/911234567890', external: true },
-      { icon: '✉️', label: 'hello@bharatcover.net', href: 'mailto:hello@bharatcover.net' },
+      { icon: '✉️', label: 'info@bharatcover.net', href: 'mailto:hello@bharatcover.net' },
     ],
     visual: {
       src: 'https://images.unsplash.com/photo-1573497620053-ea5300f94f21?auto=format&fit=crop&w=800&q=80',
@@ -127,14 +125,6 @@ export const contactPageData: ContactPageData = {
       subtitle: 'Multiple ways to connect with our team',
       items: [
         {
-          icon: '📞',
-          iconVariant: 'teal',
-          label: 'Toll Free',
-          value: '1800-123-456',
-          sub: 'Mon–Sat · 9 AM – 7 PM',
-          href: 'tel:+911800123456',
-        },
-        {
           icon: '💬',
           iconVariant: 'teal',
           label: 'WhatsApp',
@@ -147,7 +137,7 @@ export const contactPageData: ContactPageData = {
           icon: '✉️',
           iconVariant: 'navy',
           label: 'Email',
-          value: 'hello@bharatcover.net',
+          value: 'info@bharatcover.net',
           sub: 'We reply within 4 business hours',
           href: 'mailto:hello@bharatcover.net',
         },

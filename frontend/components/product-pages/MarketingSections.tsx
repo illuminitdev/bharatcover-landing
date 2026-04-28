@@ -179,14 +179,18 @@ export function MarketingSections({ sections }: { sections: MarketingSection[] }
                         <div className={styles.priceRow}>
                           {c.priceRow.kind === 'from' ? (
                             <>
-                              <span className={styles.priceFrom}>{c.priceRow.from}</span>
-                              <span className={styles.priceAmount}>{c.priceRow.amount}</span>
-                              <span className={styles.pricePeriod}>{c.priceRow.period}</span>
+                              <div className={styles.priceTopRow}>
+                                <span className={styles.priceFrom}>{c.priceRow.from}</span>
+                                <span className={styles.priceAmount}>{c.priceRow.amount}</span>
+                                <span className={styles.pricePeriod}>{c.priceRow.period}</span>
+                              </div>
                               {c.priceRow.gstNote ? <span className={styles.priceGst}>{c.priceRow.gstNote}</span> : null}
                             </>
                           ) : (
                             <>
-                              <span className={styles.priceFull}>{c.priceRow.text}</span>
+                              <div className={styles.priceTopRow}>
+                                <span className={styles.priceFull}>{c.priceRow.text}</span>
+                              </div>
                               {c.priceRow.gstNote ? <span className={styles.priceGst}>{c.priceRow.gstNote}</span> : null}
                             </>
                           )}
