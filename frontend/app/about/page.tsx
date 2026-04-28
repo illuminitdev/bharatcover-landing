@@ -13,14 +13,14 @@ export default function About() {
       <section className={styles.hero}>
         <div className={styles.heroInner}>
           <div className={styles.heroLeft}>
-            <span className={styles.heroTag}>ABOUT BHARATCOVER</span>
+            <span className={styles.heroTag}>+ ABOUT BHARATCOVER</span>
             <h1>Making Insurance <span>Simple</span>, Honest &amp; Affordable.</h1>
             <p>
               We are an IRDAI-regulated insurance distribution platform on a mission to bring quality
-              protection to every Indian family and business.
+              protection to every Indian family and business - without the jargon or the fine print.
             </p>
             <div className={styles.heroCtas}>
-              <a href="/personal/contact" className={styles.primaryBtn}>Talk to Us</a>
+              <a href="/personal/contact" className={styles.primaryBtn}>Talk to Us →</a>
               <a href="/personal" className={styles.secondaryBtn}>See Our Plans</a>
             </div>
           </div>
@@ -33,17 +33,11 @@ export default function About() {
               />
               <div className={styles.floatingCard}>
                 <div className={styles.floatingLabel}>Status</div>
-                <div className={styles.floatingTitle}>Launching Now</div>
+                <div className={styles.floatingTitle}>Launching<br />Now</div>
                 <div className={styles.floatingSub}>IRDAI Regulated · 2026</div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className={styles.breadcrumbBar}>
-        <div className={styles.container}>
-          <div className={styles.breadcrumb}>Home <span>›</span> About Us</div>
         </div>
       </section>
 
@@ -195,19 +189,17 @@ export default function About() {
               All BharatCover policies are underwritten by IRDAI-licensed general insurance companies.
             </p>
           </div>
-          <div className={styles.partnerCards}>
-            <article className={styles.partnerCard}>
-              <div className={styles.partnerTitle}><span className={styles.dotRed} /> Magma General Insurance</div>
-              <p>Personal Accident · Group PA</p>
-            </article>
-            <article className={styles.partnerCard}>
-              <div className={styles.partnerTitle}><span className={styles.dotBlue} /> SBI General Insurance</div>
-              <p>Health · Personal Accident</p>
-            </article>
-            <article className={styles.partnerCard}>
-              <div className={styles.partnerTitle}><span className={styles.dotGreen} /> Go Digit General Insurance</div>
-              <p>Group Health · Workmen Comp</p>
-            </article>
+          <div className={styles.partnerLogos}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logos/partners/bajaj-allianz.svg" alt="Bajaj Allianz" />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logos/partners/hdfc-ergo.svg" alt="HDFC Ergo" />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logos/partners/icici-lombard.svg" alt="ICICI Lombard" />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logos/partners/digit-insurance.svg" alt="Go Digit Insurance" />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logos/partners/care-health.svg" alt="Care Health" />
           </div>
           <div className={styles.complianceBox}>
             <h3>IRDAI Regulated - Full Compliance</h3>
