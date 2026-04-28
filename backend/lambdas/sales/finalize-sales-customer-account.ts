@@ -5,6 +5,7 @@ import { tableConfig } from '../../shared/config';
 import { createCustomerLoginAccount } from '../../shared/auth/customer-self-registration';
 import { sendAccountCredentialsEmail } from '../../shared/services/email-service';
 import { createNotification } from '../../shared/services/notification-service';
+import { mintHandoffToken } from '../../shared/auth/handoff-jwt';
 import { fail, ok } from '../../shared/utils/response';
 
 export const handler: APIGatewayProxyHandler = async (event) => {
@@ -44,5 +45,15 @@ export const handler: APIGatewayProxyHandler = async (event) => {
     })
   );
 
-  return ok({ accountCreated: true });
+  // Mint a single-use handoff token bound to this email. The main app
+  // exchanges it for Cognito tokens at POST /auth/handoff-exchange. Falls
+  // back to email-prefill on the main app login screen if HANDOFF_JWT_SECRET
+  // is not configured.
+  const handoffToken = mintHandoffToken(customer.email);
+
+  return ok({
+    accountCreated: true,
+    email: customer.email.toLowerCase(),
+    handoffToken,
+  });
 };

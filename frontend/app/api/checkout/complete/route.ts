@@ -3,6 +3,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import bcrypt from 'bcryptjs';
 import { getRazorpayKeySecretForServer } from '@/lib/razorpay-direct-checkout';
 import { connectToDatabase } from '@/lib/mongoose';
+import { ensureCognitoCustomer } from '@/lib/cognito-admin';
+import { mintHandoffToken } from '@/lib/handoff-jwt';
 
 function generatePolicyId(productId: string): string {
   const now = new Date();
@@ -170,6 +172,23 @@ export async function POST(request: NextRequest) {
       console.warn('[checkout/complete] DB persistence skipped:', persistenceError);
     }
 
+    // Provision the Cognito user in the shared User Pool so the temp password
+    // we just emailed actually authenticates against the main BharatCover app.
+    // Failures here do NOT roll back the policy — they're surfaced as
+    // `cognito.provisioned=false` and the client falls back to email-prefill
+    // (Mode B) on the main-app login screen.
+    const cognitoResult = await ensureCognitoCustomer(email, tempPassword);
+    if (!cognitoResult.provisioned) {
+      console.warn(
+        '[checkout/complete] Cognito provisioning skipped:',
+        cognitoResult.reason
+      );
+    }
+
+    const handoffToken = cognitoResult.provisioned
+      ? mintHandoffToken(email)
+      : null;
+
     return NextResponse.json({
       success: true,
       policyId,
@@ -181,6 +200,11 @@ export async function POST(request: NextRequest) {
       termEnd: termEnd.toISOString(),
       persistence,
       persistenceError,
+      cognito: {
+        provisioned: cognitoResult.provisioned,
+        reason: cognitoResult.reason,
+      },
+      handoffToken,
     });
   } catch (error) {
     console.error('[checkout/complete] Error:', error);

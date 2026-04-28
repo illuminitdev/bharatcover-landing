@@ -20,6 +20,7 @@ import {
 import { paymentService } from '@/lib/services/payments';
 import { policyService } from '@/lib/services/policies';
 import { productService } from '@/lib/services/products';
+import { buildMainAppLoginUrl } from '@/lib/main-app-handoff';
 import styles from './checkout.module.css';
 const DIGILOCKER_CLIENT_KEY = 'bharatcover_digilocker_client_id';
 
@@ -119,6 +120,8 @@ type LocalPolicyData = {
   email: string;
   termStart: string;
   termEnd: string;
+  /** Optional single-use JWT used to auto-sign-in on the main BharatCover app. */
+  handoffToken?: string | null;
 };
 
 function CheckoutContent() {
@@ -144,6 +147,8 @@ function CheckoutContent() {
   const [confirmPolicy, setConfirmPolicy] = useState<GuestPolicyConfirm | null>(null);
   /** Set when /api/checkout/complete generates a local policy + login after direct Razorpay payment. */
   const [localPolicyData, setLocalPolicyData] = useState<LocalPolicyData | null>(null);
+  /** Set after a successful sales_public finalize-account; used to auto-sign-in on the main app. */
+  const [salesPublicHandoffToken, setSalesPublicHandoffToken] = useState<string | null>(null);
   const [confirmPolicyLoading, setConfirmPolicyLoading] = useState(false);
   const [confirmPolicyError, setConfirmPolicyError] = useState<string | null>(null);
 
@@ -657,12 +662,20 @@ function CheckoutContent() {
               sessionId,
               policyId,
             });
+            const finalizeJson = (await finalizeRes.json().catch(() => ({}))) as {
+              error?: string;
+              accountCreated?: boolean;
+              email?: string;
+              handoffToken?: string | null;
+            };
             if (!finalizeRes.ok) {
-              const finalizeJson = (await finalizeRes.json().catch(() => ({}))) as { error?: string };
               setPayError(finalizeJson.error ?? 'Payment verified, but account finalization failed');
               return false;
             }
 
+            if (finalizeJson.handoffToken) {
+              setSalesPublicHandoffToken(finalizeJson.handoffToken);
+            }
             setGuestIssuedPolicyId(policyId);
             setGuestCertificateNo((prev) => prev ?? policyId.slice(0, 12).toUpperCase());
             return true;
@@ -1356,9 +1369,16 @@ function CheckoutContent() {
                     <p className={styles.loginCredentialsNote}>
                       Please change your password after your first login.
                     </p>
-                    <Link href="/sales/login" className={styles.loginCredentialsBtn}>
+                    <a
+                      href={buildMainAppLoginUrl({
+                        email: localPolicyData.email,
+                        handoffToken: localPolicyData.handoffToken,
+                      })}
+                      className={styles.loginCredentialsBtn}
+                      rel="noopener"
+                    >
                       Login to Policy Portal →
-                    </Link>
+                    </a>
                   </div>
                 </div>
               )}
@@ -1414,9 +1434,16 @@ function CheckoutContent() {
                   >
                     Download policy
                   </button>
-                  <Link href="/sales/login" className={`${styles.postPayBtn} ${styles.postPayBtnSecondary}`}>
+                  <a
+                    href={buildMainAppLoginUrl({
+                      email,
+                      handoffToken: salesPublicHandoffToken,
+                    })}
+                    className={`${styles.postPayBtn} ${styles.postPayBtnSecondary}`}
+                    rel="noopener"
+                  >
                     Policy login
-                  </Link>
+                  </a>
                 </div>
               )}
             </>

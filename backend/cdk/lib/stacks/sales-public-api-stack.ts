@@ -1,5 +1,6 @@
 import * as cdk from 'aws-cdk-lib';
 import * as apigateway from 'aws-cdk-lib/aws-apigateway';
+import * as iam from 'aws-cdk-lib/aws-iam';
 import type { Construct } from 'constructs';
 import { ApiStackBase, type ApiStackBaseProps } from '../shared/api-stack-base';
 import { mountPaymentEndpoints } from './standalone-payment-api-stack';
@@ -25,6 +26,12 @@ export class SalesPublicApiStack extends ApiStackBase {
       RAZORPAY_WEBHOOK_SECRET: process.env.RAZORPAY_WEBHOOK_SECRET ?? '',
       REGISTRATION_PASSWORD_ENCRYPTION_KEY:
         process.env.REGISTRATION_PASSWORD_ENCRYPTION_KEY ?? '',
+      USER_POOL_ID: appConfig.auth.userPoolId,
+      CLIENT_ID: appConfig.auth.clientId,
+      POLICY_EMAIL_FROM: process.env.POLICY_EMAIL_FROM ?? 'noreply@bharatcover.net',
+      // Used by finalize-sales-customer-account to mint a single-use handoff
+      // JWT for the main BharatCover app's /auth/handoff-exchange endpoint.
+      HANDOFF_JWT_SECRET: process.env.HANDOFF_JWT_SECRET ?? '',
     };
 
     const createSession = this.createLambda(
@@ -67,6 +74,30 @@ export class SalesPublicApiStack extends ApiStackBase {
     this.allowReadWrite(createOrder, tableArns);
     this.allowReadWrite(verifyPayment, tableArns);
     this.allowReadWrite(finalizeAccount, tableArns);
+
+    // FinalizeSalesCustomerAccountFn provisions the Cognito user and emails
+    // credentials, so it needs Cognito + SES permissions in addition to
+    // DynamoDB. Scoped to the configured user pool when available, otherwise
+    // wildcard (matches the auth stack's existing pattern).
+    const userPoolArn = appConfig.auth.userPoolId
+      ? `arn:aws:cognito-idp:${this.region}:${this.account}:userpool/${appConfig.auth.userPoolId}`
+      : '*';
+    finalizeAccount.addToRolePolicy(
+      new iam.PolicyStatement({
+        actions: [
+          'cognito-idp:AdminCreateUser',
+          'cognito-idp:AdminSetUserPassword',
+          'cognito-idp:AdminGetUser',
+        ],
+        resources: [userPoolArn],
+      })
+    );
+    finalizeAccount.addToRolePolicy(
+      new iam.PolicyStatement({
+        actions: ['ses:SendEmail', 'ses:SendRawEmail'],
+        resources: ['*'],
+      })
+    );
 
     const api = new apigateway.RestApi(this, 'SalesPublicApi', {
       restApiName: `sales-public-api-${props.stage}`,
