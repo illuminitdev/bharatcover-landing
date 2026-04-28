@@ -1,0 +1,295 @@
+.page {
+  background: #f5f8fd;
+  min-height: 100vh;
+  color: #13325f;
+}
+
+.hero {
+  background: linear-gradient(135deg, #0e3a7b 0%, #0a2c5d 100%);
+  color: #fff;
+  padding: 28px 20px;
+}
+
+.heroInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.planTag {
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #7ce3dd;
+  margin-bottom: 6px;
+}
+
+.heroTitle {
+  margin: 0;
+  font-size: clamp(26px, 4vw, 36px);
+  font-weight: 800;
+}
+
+.heroSubtitle {
+  margin: 8px 0 10px;
+  color: #cde0ff;
+}
+
+.heroChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+.heroPrice {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 14px 16px;
+  min-width: 170px;
+}
+
+.heroPrice p {
+  margin: 0;
+  font-size: 12px;
+  color: #cae2ff;
+}
+
+.heroPrice strong {
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+.progressWrap {
+  max-width: 1200px;
+  margin: 10px auto 0;
+  padding: 0 20px;
+  display: flex;
+  gap: 8px;
+}
+
+.progressItem,
+.progressItemActive {
+  font-size: 12px;
+  border-radius: 999px;
+  padding: 8px 12px;
+  background: #e4ecf8;
+  color: #4e668d;
+}
+
+.progressItemActive {
+  background: #0ab5a8;
+  color: #fff;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 14px auto 0;
+  padding: 0 20px 32px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 16px;
+}
+
+.left {
+  min-width: 0;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e4ecf8;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.cardTitle {
+  margin: 0 0 12px;
+  font-size: 18px;
+  color: #0f356f;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field span {
+  font-size: 12px;
+  color: #5d7395;
+  font-weight: 600;
+}
+
+.field input {
+  height: 40px;
+  border: 1px solid #d7e2f2;
+  border-radius: 8px;
+  padding: 0 10px;
+  color: #23456f;
+  background: #f8fbff;
+}
+
+.continueBtn {
+  width: 100%;
+  border: 0;
+  background: #12c6ba;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 8px;
+  height: 44px;
+  cursor: pointer;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.summaryCard,
+.whyCard {
+  background: #fff;
+  border: 1px solid #e4ecf8;
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.summaryTitle,
+.whyTitle {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+.summaryPrice {
+  font-size: 28px;
+  font-weight: 800;
+  color: #0f356f;
+  margin-bottom: 8px;
+}
+
+.summaryRows {
+  border-top: 1px solid #edf2fa;
+  border-bottom: 1px solid #edf2fa;
+  padding: 10px 0;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 13px;
+  color: #50688d;
+  margin-bottom: 6px;
+}
+
+.row:last-child {
+  margin-bottom: 0;
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  color: #123466;
+}
+
+.toggleRow {
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+  font-size: 12px;
+  color: #60789b;
+}
+
+.toggle {
+  border: 0;
+  background: #d3dff1;
+  width: 40px;
+  height: 22px;
+  border-radius: 999px;
+  position: relative;
+  cursor: pointer;
+}
+
+.toggle span {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  transition: left 0.2s ease;
+}
+
+.toggleOn {
+  background: #13c2b6;
+}
+
+.toggleOn span {
+  left: 21px;
+}
+
+.toggleNote {
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: #60789b;
+}
+
+.whyCard ul {
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #4b6387;
+  font-size: 13px;
+}
+
+.helpCta {
+  margin-top: 12px;
+  display: inline-block;
+  text-decoration: none;
+  color: #0f356f;
+  font-weight: 700;
+}
+
+@media (max-width: 980px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .right {
+    order: -1;
+  }
+}
+
+@media (max-width: 700px) {
+  .heroInner {
+    flex-direction: column;
+  }
+
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+}

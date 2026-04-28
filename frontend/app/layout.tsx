@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import StructuredData from "@/components/StructuredData";
 import { seoConfig } from "@/lib/seo-config";
 import "@/styles/globals.css";
+import WebsiteLayout from "@/components/WebsiteLayout";
 
 export const metadata: Metadata = {
   title: {
@@ -73,8 +72,6 @@ export const metadata: Metadata = {
   category: 'Insurance',
 };
 
-import ClientMain from "@/components/ClientMain";
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -93,9 +90,7 @@ export default function RootLayout({
         <GoogleAnalytics measurementId={seoConfig.googleAnalyticsId} />
         <StructuredData data={seoConfig.getOrganizationSchema()} />
         <StructuredData data={seoConfig.getWebsiteSchema()} />
-        <Header />
-        <ClientMain>{children}</ClientMain>
-        <Footer />
+        <WebsiteLayout>{children}</WebsiteLayout>
       </body>
     </html>
   );

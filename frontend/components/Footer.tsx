@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import styles from './Footer.module.css';
 import {
   FaPhoneAlt,
@@ -14,21 +13,6 @@ import {
 } from 'react-icons/fa';
 
 export default function Footer() {
-  const pathname = usePathname();
-  const isCheckoutFlow =
-    pathname.startsWith('/sales/products') ||
-    pathname.startsWith('/sales/contact') ||
-    pathname.startsWith('/sales/checkout') ||
-    pathname.startsWith('/sales/quote') ||
-    pathname.startsWith('/sales/login') ||
-    pathname.startsWith('/sales/my-policies') ||
-    pathname.startsWith('/sales/policy/');
-  const isProductPage = pathname?.startsWith('/product_pages');
-  const isHomePage = pathname === '/';
-  const isEmbeddedStaticFlow = pathname.startsWith('/personal') || pathname.startsWith('/business');
-
-  if (isCheckoutFlow || isProductPage || isHomePage || isEmbeddedStaticFlow) return null;
-
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>

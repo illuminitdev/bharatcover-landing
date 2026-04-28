@@ -1,18 +1,17 @@
 import type { Metadata } from 'next';
-import { healthQuotePageData } from '@/content/product-pages/health-quote';
-import { ProductMarketingPage } from '@/components/product-pages/ProductMarketingPage';
-
-const { seo } = healthQuotePageData;
+import HealthQuoteClient from '@/components/health-quote/HealthQuoteClient';
 
 export const metadata: Metadata = {
-  title: seo.title,
-  description: seo.description,
+  title: 'Health Insurance Quote',
+  description:
+    'Start your Bharat Arogya health application with BharatCover through a guided proposer and nominee journey.',
   openGraph: {
-    title: seo.openGraphTitle ?? seo.title,
-    description: seo.openGraphDescription ?? seo.description,
+    title: 'BharatCover - Health Quote',
+    description:
+      'Complete proposer details, nominee details, and review your quote before secure checkout.',
   },
 };
 
 export default function HealthQuotePage() {
-  return <ProductMarketingPage sections={healthQuotePageData.sections} />;
+  return <HealthQuoteClient />;
 }

@@ -26,11 +26,6 @@ export default function Header() {
   const navRef = useRef<HTMLElement>(null);
   const pathname = usePathname();
 
-  const isCheckoutFlow = pathname.startsWith('/sales/products') || 
-                         pathname.startsWith('/sales/contact') || 
-                         pathname.startsWith('/sales/checkout');
-  const isEmbeddedStaticFlow = pathname.startsWith('/personal') || pathname.startsWith('/business');
-
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -69,8 +64,6 @@ export default function Header() {
     setOpenMenu(null);
     setIsMobileMenuOpen(false);
   };
-
-  if (isCheckoutFlow || isEmbeddedStaticFlow) return null;
 
   return (
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
