@@ -1,5 +1,18 @@
-import { StaticHtmlPage } from '@/components/StaticHtmlPage';
+import type { Metadata } from 'next';
+import { healthInsurancePageData } from '@/content/product-pages/health-insurance';
+import { ProductMarketingPage } from '@/components/product-pages/ProductMarketingPage';
 
-export default function PersonalHealthInsurancePage() {
-  return <StaticHtmlPage file="health-insurance" title="Health Insurance" />;
+const { seo } = healthInsurancePageData;
+
+export const metadata: Metadata = {
+  title: seo.title,
+  description: seo.description,
+  openGraph: {
+    title: seo.openGraphTitle ?? seo.title,
+    description: seo.openGraphDescription ?? seo.description,
+  },
+};
+
+export default function HealthInsurancePage() {
+  return <ProductMarketingPage sections={healthInsurancePageData.sections} />;
 }
