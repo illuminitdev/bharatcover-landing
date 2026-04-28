@@ -11,7 +11,6 @@ const PERSONAL_LINKS = [
   { label: 'Accident Cover', href: '/personal/accident' },
   { label: 'Health Insurance', href: '/personal/health-insurance' },
   { label: 'Health Quote', href: '/personal/health-quote' },
-  { label: 'Contact', href: '/personal/contact' },
 ];
 
 export default function Header() {
@@ -116,7 +115,7 @@ export default function Header() {
                 ) : null}
               </div>
 
-              <Link href="/why-choose-us" className={styles.navLink} onClick={closeMenus}>Why Choose Us</Link>
+              <Link href="/personal/contact" className={styles.navLink} onClick={closeMenus}>Contact</Link>
               <Link href="/personal/contact" className={styles.ctaButton} onClick={closeMenus}>Get Quote</Link>
             </nav>
           </>
