@@ -162,6 +162,10 @@ function QuotePageContent() {
                   email: em,
                 });
                 if (!result.ok) {
+                  if (result.accountExists) {
+                    setError('Account on this mobile or email already exists.');
+                    return;
+                  }
                   setError(result.error);
                   return;
                 }

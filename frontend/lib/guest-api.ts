@@ -1,5 +1,5 @@
 import { clearCheckoutWizardDraft } from '@/lib/checkout-wizard-draft';
-import { getInsuranceApiBase } from '@/lib/insurance-api-config';
+import { getInsuranceApiBase, normalizeApiBase } from '@/lib/insurance-api-config';
 
 /**
  * Browser client for split insurance APIs configured via
@@ -7,10 +7,14 @@ import { getInsuranceApiBase } from '@/lib/insurance-api-config';
  */
 
 export function getGuestApiBase(): string {
+  const unified = normalizeApiBase(process.env.NEXT_PUBLIC_API_URL);
+  if (unified) return unified;
   return getInsuranceApiBase('customerSales');
 }
 
 function resolveGuestApiBase(path: string): string {
+  const unified = normalizeApiBase(process.env.NEXT_PUBLIC_API_URL);
+  if (unified) return unified;
   const normalizedPath = path.startsWith('/') ? path : `/${path}`;
   if (
     normalizedPath.startsWith('/guest/payments') ||
@@ -79,7 +83,7 @@ export type CreateGuestSessionParams = {
 
 export type CreateGuestSessionResult =
   | { ok: true }
-  | { ok: false; error: string };
+  | { ok: false; error: string; accountExists?: boolean };
 
 /**
  * POST /guest/sessions and persist tokens to sessionStorage (browser only).
@@ -104,9 +108,14 @@ export async function createGuestSessionAndStore(
       guestToken?: string;
       sessionId?: string;
       policyId?: string;
+      accountExists?: boolean;
     };
     if (!res.ok) {
-      return { ok: false, error: data.error ?? `Request failed (${res.status})` };
+      return {
+        ok: false,
+        error: data.error ?? `Request failed (${res.status})`,
+        accountExists: Boolean(data.accountExists),
+      };
     }
 
     if (typeof window !== 'undefined' && data.guestToken && data.sessionId && data.policyId) {
@@ -140,9 +149,14 @@ export async function createGuestSessionAndStore(
         policyId?: string;
         token?: string;
         error?: string;
+        accountExists?: boolean;
       };
       if (!res.ok) {
-        throw new Error(data.error ?? `checkout session failed (${res.status})`);
+        return {
+          ok: false,
+          error: data.error ?? `checkout session failed (${res.status})`,
+          accountExists: Boolean(data.accountExists),
+        };
       }
       if (
         typeof window !== 'undefined' &&
@@ -160,7 +174,7 @@ export async function createGuestSessionAndStore(
         clearCheckoutWizardDraft();
         return { ok: true };
       }
-      throw new Error('sales checkout session API did not return required fields');
+      return { ok: false, error: 'sales checkout session API did not return required fields' };
     } catch {
       if (typeof window !== 'undefined') {
         // Last-resort local mode for UI testing.

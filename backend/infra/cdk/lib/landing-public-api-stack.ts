@@ -86,6 +86,7 @@ export class LandingPublicApiStack extends cdk.Stack {
     });
     customersTable.grantReadWriteData(guestSessionsFn);
     policiesTable.grantReadWriteData(guestSessionsFn);
+    usersTable.grantReadData(guestSessionsFn);
 
     const guestPoliciesFn = new nodejs.NodejsFunction(this, 'GuestPoliciesFn', {
       runtime: lambda.Runtime.NODEJS_20_X,

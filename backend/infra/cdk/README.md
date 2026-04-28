@@ -39,9 +39,10 @@ CDK_DEFAULT_ACCOUNT=<account> CDK_DEFAULT_REGION=us-east-1 npx cdk synth -c stag
 
 # Deploy — stage must match table suffixes (e.g. insurance-platform-policies-raghu-development)
 CDK_DEFAULT_ACCOUNT=<account> CDK_DEFAULT_REGION=us-east-1 npx cdk deploy LandingPublicApi-raghu-development \
-  -c stage=raghu-development \
-  -c allowedOrigins='https://www.bharatcover.net,https://bharatcover.net,http://localhost:3000,http://127.0.0.1:3000,http://localhost:4000,http://127.0.0.1:4000'
+  -c stage=raghu-development
 ```
+
+`allowedOrigins` is optional. If not provided, this stack now defaults to `*` for CORS.
 
 Outputs include **ApiUrl** — set the Next.js app’s `NEXT_PUBLIC_API_URL` to this base (no trailing slash).
 

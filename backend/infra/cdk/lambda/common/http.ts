@@ -9,10 +9,11 @@ export function getAllowedOrigin(
     .map((s) => s.trim())
     .filter(Boolean);
   const requestOrigin = event.headers?.Origin ?? event.headers?.origin ?? '';
+  if (allowed.includes('*')) return '*';
   if (requestOrigin && allowed.includes(requestOrigin)) {
     return requestOrigin;
   }
-  return allowed[0] ?? 'https://www.bharatcover.net';
+  return allowed[0] ?? '*';
 }
 
 export function json(
