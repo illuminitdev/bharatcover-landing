@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import styles from './page.module.css';
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
 
 export default function Home() {
   return (
@@ -234,68 +233,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={styles.homeFooter}>
-        <div className={styles.sectionInner}>
-          <div className={styles.footerGrid}>
-            <div>
-              <h4>BharatCover</h4>
-              <p>
-                IRDAI-regulated insurance distribution platform. Policies underwritten by Magma
-                General, SBI General and Go Digit General Insurance.
-              </p>
-            </div>
-            <div>
-              <h5>Personal Plans</h5>
-              <Link href="/personal">Bharat Arogya Individual</Link>
-              <Link href="/personal">Bharat Arogya Family Floater</Link>
-              <Link href="/personal/accident">Bharat Suraksha Accident</Link>
-              <Link href="/personal/health-quote">Bharat Suraksha Daily Cash</Link>
-            </div>
-            <div>
-              <h5>Business Plans</h5>
-              <Link href="/business">Group Health Insurance</Link>
-              <Link href="/business">Group Personal Accident</Link>
-              <Link href="/business">School & College PA</Link>
-              <Link href="/business">Workmen Compensation</Link>
-            </div>
-            <div>
-              <h5>Support</h5>
-              <Link href="/personal/contact">Get a Quote</Link>
-              <Link href="/#claims">Claims Support</Link>
-              <Link href="/#about">About Us</Link>
-              <Link href="/business/contact">Contact Us</Link>
-            </div>
-            <div>
-              <h5>Follow Us</h5>
-              <div className={styles.socialLinks}>
-                <a className={styles.socialLink} href="https://www.facebook.com/profile.php?id=61563633155912" target="_blank" rel="noopener noreferrer">
-                  <FaFacebookF className={styles.socialIcon} /> Facebook
-                </a>
-                <a className={styles.socialLink} href="https://www.instagram.com/bharatcover_official/" target="_blank" rel="noopener noreferrer">
-                  <FaInstagram className={styles.socialIcon} /> Instagram
-                </a>
-                <a className={styles.socialLink} href="https://www.linkedin.com/company/bharatcover/" target="_blank" rel="noopener noreferrer">
-                  <FaLinkedinIn className={styles.socialIcon} /> LinkedIn
-                </a>
-                <a className={styles.socialLink} href="https://www.youtube.com/@bharatcover_official" target="_blank" rel="noopener noreferrer">
-                  <FaYoutube className={styles.socialIcon} /> YouTube
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className={styles.footerBottom}>
-            <p className={styles.footerBottomText}>
-              © 2024 BharatCover Insurance Brokers Pvt. Ltd. IRDAI Registration No. XXXXXX. All rights reserved.
-            </p>
-            <div className={styles.footerBottomLinks}>
-              <Link href="/privacy">Privacy Policy</Link>
-              <Link href="/terms">Terms of Use</Link>
-              <Link href="#">Cookie Policy</Link>
-              <Link href="#">Disclaimer</Link>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

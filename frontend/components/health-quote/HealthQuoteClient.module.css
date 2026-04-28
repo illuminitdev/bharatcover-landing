@@ -7,67 +7,115 @@
 .hero {
   background: linear-gradient(135deg, #0e3a7b 0%, #0a2c5d 100%);
   color: #fff;
-  padding: 28px 20px;
+  position: relative;
+  overflow: hidden;
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.14) 1.2px, transparent 1.2px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.07) 0.9px, transparent 0.9px);
+  background-size: 36px 36px, 18px 18px;
+  pointer-events: none;
 }
 
 .heroInner {
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
+  padding: 44px 24px;
+  position: relative;
+  z-index: 1;
   display: flex;
   justify-content: space-between;
-  gap: 18px;
-  align-items: flex-start;
+  gap: 32px;
+  align-items: center;
 }
 
 .planTag {
-  font-size: 12px;
-  letter-spacing: 0.06em;
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #7ce3dd;
-  margin-bottom: 6px;
+  color: #a5e6e1;
+  border: 1px solid rgba(10, 181, 168, 0.35);
+  background: rgba(10, 181, 168, 0.18);
+  border-radius: 999px;
+  padding: 5px 12px;
+  margin: 0 0 12px;
 }
 
 .heroTitle {
-  margin: 0;
-  font-size: clamp(26px, 4vw, 36px);
-  font-weight: 800;
+  margin: 0 0 8px;
+  font-size: clamp(30px, 3.5vw, 44px);
+  line-height: 1.15;
+  font-weight: 900;
+  color: #ffffff;
 }
 
 .heroSubtitle {
-  margin: 8px 0 10px;
-  color: #cde0ff;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 16px;
+  line-height: 1.65;
+  max-width: 560px;
 }
 
 .heroChips {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
+  margin-top: 14px;
 }
 
 .chip {
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 999px;
-  padding: 5px 10px;
-  font-size: 12px;
+  padding: 8px 14px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.88);
+  font-weight: 600;
 }
 
 .heroPrice {
-  background: rgba(255, 255, 255, 0.12);
-  border-radius: 12px;
-  padding: 14px 16px;
-  min-width: 170px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  min-width: 200px;
+  text-align: center;
 }
 
 .heroPrice p {
-  margin: 0;
-  font-size: 12px;
-  color: #cae2ff;
+  margin: 0 0 6px;
+  font-size: 11px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 .heroPrice strong {
-  font-size: 28px;
+  display: block;
+  font-size: 48px;
+  font-weight: 900;
   line-height: 1.2;
+}
+
+.heroPrice span {
+  display: block;
+  margin-top: 2px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.55);
 }
 
 .progressWrap {
@@ -287,6 +335,16 @@
 @media (max-width: 700px) {
   .heroInner {
     flex-direction: column;
+    align-items: flex-start;
+    padding: 28px 20px;
+  }
+
+  .heroTitle {
+    font-size: clamp(28px, 8vw, 34px);
+  }
+
+  .heroPrice {
+    min-width: 100%;
   }
 
   .formGrid {

@@ -34,7 +34,7 @@
   position: relative;
   overflow: hidden;
   background: linear-gradient(135deg, #1b3c78 0%, #0d2454 100%);
-  min-height: 380px;
+  min-height: 250px;
   display: flex;
   align-items: center;
 }
@@ -56,12 +56,12 @@
   z-index: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 32px;
   align-items: center;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 48px 24px;
+  padding: 34px 24px;
 }
 
 @media (max-width: 900px) {
@@ -110,7 +110,8 @@
   border-radius: 20px;
   overflow: hidden;
   position: relative;
-  aspect-ratio: 4/3;
+  aspect-ratio: 16 / 9;
+  min-height: 190px;
   background: linear-gradient(135deg, rgba(27, 60, 120, 0.85) 0%, rgba(10, 25, 63, 0.95) 100%);
 }
 
@@ -189,9 +190,10 @@
   z-index: 1;
   display: grid;
   grid-template-columns: 1fr minmax(280px, 400px);
-  gap: 40px;
+  gap: 32px;
   align-items: center;
-  padding: 56px 0 64px;
+  min-height: 250px;
+  padding: 34px 0;
 }
 
 @media (max-width: 900px) {

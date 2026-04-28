@@ -40,10 +40,11 @@
   z-index: 1;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 48px 24px 52px;
+  min-height: 250px;
+  padding: 34px 24px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  gap: 32px;
   align-items: center;
 }
 
@@ -122,7 +123,7 @@
   border-radius: 20px;
   overflow: hidden;
   position: relative;
-  height: 400px;
+  height: 190px;
   background: linear-gradient(135deg, rgba(27, 60, 120, 0.8) 0%, rgba(10, 25, 63, 0.95) 100%);
 }
 

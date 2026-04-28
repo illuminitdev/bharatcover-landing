@@ -14,17 +14,13 @@ const PERSONAL_LINKS = [
   { label: 'Contact', href: '/personal/contact' },
 ];
 
-const BUSINESS_LINKS = [
-  { label: 'Business Overview', href: '/business' },
-  { label: 'Contact', href: '/business/contact' },
-];
-
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState<'personal' | 'business' | null>(null);
   const navRef = useRef<HTMLElement>(null);
   const pathname = usePathname();
+  const isCheckoutPage = pathname?.startsWith('/sales/checkout');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -79,70 +75,52 @@ export default function Header() {
           />
         </Link>
 
-        <button
-          className={styles.mobileToggle}
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-
-        <nav className={`${styles.nav} ${isMobileMenuOpen ? styles.mobileOpen : ''}`} ref={navRef}>
-          <Link href="/" className={styles.navLink} onClick={closeMenus}>Home</Link>
-          <Link href="/about" className={styles.navLink} onClick={closeMenus}>About</Link>
-
-          <div className={styles.dropdown}>
+        {!isCheckoutPage && (
+          <>
             <button
-              type="button"
-              className={styles.dropdownTrigger}
-              onClick={() => setOpenMenu((current) => (current === 'business' ? null : 'business'))}
-              aria-expanded={openMenu === 'business'}
-              aria-haspopup="menu"
+              className={styles.mobileToggle}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
             >
-              Business
+              <span></span>
+              <span></span>
+              <span></span>
             </button>
-            {openMenu === 'business' ? (
-              <ul className={styles.dropdownPanel} role="menu">
-                {BUSINESS_LINKS.map((item) => (
-                  <li key={item.href}>
-                    <Link href={item.href} className={styles.dropdownLink} onClick={closeMenus}>
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            ) : null}
-          </div>
 
-          <div className={styles.dropdown}>
-            <button
-              type="button"
-              className={styles.dropdownTrigger}
-              onClick={() => setOpenMenu((current) => (current === 'personal' ? null : 'personal'))}
-              aria-expanded={openMenu === 'personal'}
-              aria-haspopup="menu"
-            >
-              Personal
-            </button>
-            {openMenu === 'personal' ? (
-              <ul className={styles.dropdownPanel} role="menu">
-                {PERSONAL_LINKS.map((item) => (
-                  <li key={item.href}>
-                    <Link href={item.href} className={styles.dropdownLink} onClick={closeMenus}>
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            ) : null}
-          </div>
+            <nav className={`${styles.nav} ${isMobileMenuOpen ? styles.mobileOpen : ''}`} ref={navRef}>
+              <Link href="/" className={styles.navLink} onClick={closeMenus}>Home</Link>
+              <Link href="/about" className={styles.navLink} onClick={closeMenus}>About</Link>
 
-          <Link href="/why-choose-us" className={styles.navLink} onClick={closeMenus}>Why Choose Us</Link>
-          <Link href="/claims" className={styles.navLink} onClick={closeMenus}>Claims</Link>
-          <Link href="/personal/contact" className={styles.ctaButton} onClick={closeMenus}>Get Quote</Link>
-        </nav>
+              <Link href="/business" className={styles.navLink} onClick={closeMenus}>Business </Link>
+
+              <div className={styles.dropdown}>
+                <button
+                  type="button"
+                  className={styles.dropdownTrigger}
+                  onClick={() => setOpenMenu((current) => (current === 'personal' ? null : 'personal'))}
+                  aria-expanded={openMenu === 'personal'}
+                  aria-haspopup="menu"
+                >
+                  Personal
+                </button>
+                {openMenu === 'personal' ? (
+                  <ul className={styles.dropdownPanel} role="menu">
+                    {PERSONAL_LINKS.map((item) => (
+                      <li key={item.href}>
+                        <Link href={item.href} className={styles.dropdownLink} onClick={closeMenus}>
+                          {item.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+              </div>
+
+              <Link href="/why-choose-us" className={styles.navLink} onClick={closeMenus}>Why Choose Us</Link>
+              <Link href="/personal/contact" className={styles.ctaButton} onClick={closeMenus}>Get Quote</Link>
+            </nav>
+          </>
+        )}
       </div>
     </header>
   );

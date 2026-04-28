@@ -46,14 +46,6 @@ function QuotePageContent() {
 
   return (
     <div className={styles.page}>
-      <nav className={styles.breadcrumb} aria-label="Breadcrumb">
-        <Link href="/">Home</Link>
-        <span className={styles.sep}>›</span>
-        <Link href="/sales">Personal Insurance</Link>
-        <span className={styles.sep}>›</span>
-        <span className={styles.current}>Instant quote</span>
-      </nav>
-
       <div className={styles.grid}>
         <div className={styles.backRow}>
           <Link href="/sales" className={styles.backLink}>

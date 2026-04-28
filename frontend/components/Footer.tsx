@@ -3,9 +3,6 @@
 import Link from 'next/link';
 import styles from './Footer.module.css';
 import {
-  FaPhoneAlt,
-  FaEnvelope,
-  FaMapMarkerAlt,
   FaFacebookF,
   FaInstagram,
   FaLinkedinIn,
@@ -16,79 +13,103 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
-        <div className={styles.footerGrid}>
-          <div className={styles.footerCol}>
-            <h3 className={styles.footerLogo}>Bharat Cover</h3>
-            <p className={styles.footerDesc}>
-              Your trusted corporate insurance care platform, delivering reliable and affordable
-              insurance solutions to protect organizations and their people.
+        <div className={styles.topSection}>
+          <div className={styles.column}>
+            <h3 className={styles.title}>BHARATCOVER</h3>
+            <p className={styles.description}>
+              IRDAI-regulated insurance distribution platform. Policies underwritten by Magma
+              General, SBI General and Go Digit General Insurance.
             </p>
           </div>
 
-          <div className={styles.footerCol}>
-            <h4 className={styles.footerTitle}>Products</h4>
-            <ul className={styles.footerLinks}>
-              <li><Link href="/products#personal-accident">Personal Accident Insurance</Link></li>
-              <li><Link href="/products#group-health">Group Health Insurance</Link></li>
-              <li><Link href="/products#group-term-life">Group Term Life Insurance</Link></li>
-              <li><Link href="/products#workmen-compensation">Workmen Compensation</Link></li>
-              <li><Link href="/products#opd-wellness">OPD & Wellness Plans</Link></li>
+          <div className={styles.column}>
+            <h4 className={styles.title}>PERSONAL PLANS</h4>
+            <ul className={styles.links}>
+              <li><Link href="/personal/health-insurance">Bharat Arogya Individual</Link></li>
+              <li><Link href="/personal">Bharat Arogya Family Floater</Link></li>
+              <li><Link href="/personal/accident">Bharat Suraksha Accident</Link></li>
+              <li><Link href="/personal/health-quote">Bharat Suraksha Daily Cash</Link></li>
             </ul>
           </div>
 
-          <div className={styles.footerCol}>
-            <h4 className={styles.footerTitle}>Company</h4>
-            <ul className={styles.footerLinks}>
+          <div className={styles.column}>
+            <h4 className={styles.title}>BUSINESS PLANS</h4>
+            <ul className={styles.links}>
+              <li><Link href="/business">Group Health Insurance</Link></li>
+              <li><Link href="/personal/accident">Group Personal Accident</Link></li>
+              <li><Link href="/personal/health-insurance">School &amp; College PA</Link></li>
+              <li><Link href="/business">Workmen Compensation</Link></li>
+            </ul>
+          </div>
+
+          <div className={styles.column}>
+            <h4 className={styles.title}>SUPPORT</h4>
+            <ul className={styles.links}>
+              <li><Link href="/personal/health-quote">Get a Quote</Link></li>
+              <li><Link href="/claims">Claims Support</Link></li>
               <li><Link href="/about">About Us</Link></li>
-              <li><Link href="/why-choose-us">Why Choose Us</Link></li>
+              <li><Link href="/contact">Contact Us</Link></li>
             </ul>
           </div>
 
-          <div className={styles.footerCol}>
-            <h4 className={styles.footerTitle}>Support</h4>
-            <ul className={styles.footerLinks}>
-              <li><Link href="/claims">Claims Assistance</Link></li>
-              <li><Link href="/contact">Contact Us</Link></li>
-              <li><Link href="/privacy">Privacy Policy</Link></li>
-              <li><Link href="/terms">Terms & Conditions</Link></li>
-            </ul>
-            <h4 className={styles.footerTitle}>Follow Us</h4>
-            <ul className={`${styles.footerLinks} ${styles.socialLinks}`}>
+          <div className={styles.column}>
+            <h4 className={styles.title}>FOLLOW US</h4>
+            <ul className={`${styles.links} ${styles.socialLinks}`}>
               <li>
-                <a className={styles.socialLink} href="https://www.facebook.com/profile.php?id=61563633155912" target="_blank" rel="noopener noreferrer">
+                <a
+                  className={styles.socialLink}
+                  href="https://www.facebook.com/profile.php?id=61563633155912"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FaFacebookF className={styles.socialIcon} /> Facebook
                 </a>
               </li>
               <li>
-                <a className={styles.socialLink} href="https://www.instagram.com/bharatcover_official/" target="_blank" rel="noopener noreferrer">
+                <a
+                  className={styles.socialLink}
+                  href="https://www.instagram.com/bharatcover_official/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FaInstagram className={styles.socialIcon} /> Instagram
                 </a>
               </li>
               <li>
-                <a className={styles.socialLink} href="https://www.linkedin.com/company/bharatcover/" target="_blank" rel="noopener noreferrer">
+                <a
+                  className={styles.socialLink}
+                  href="https://www.linkedin.com/company/bharatcover/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FaLinkedinIn className={styles.socialIcon} /> LinkedIn
                 </a>
               </li>
               <li>
-                <a className={styles.socialLink} href="https://www.youtube.com/@bharatcover_official" target="_blank" rel="noopener noreferrer">
+                <a
+                  className={styles.socialLink}
+                  href="https://www.youtube.com/@bharatcover_official"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FaYoutube className={styles.socialIcon} /> YouTube
                 </a>
               </li>
             </ul>
           </div>
-
-          <div className={styles.footerCol}>
-            <h4 className={styles.footerTitle}>Contact</h4>
-            <ul className={styles.contactInfo}>
-              <li><FaPhoneAlt style={{ display: 'inline', marginRight: '8px' }} /> +91 7680064255</li>
-              <li><FaEnvelope style={{ display: 'inline', marginRight: '8px' }} /> info@bharatcover.net</li>
-              <li><FaMapMarkerAlt style={{ display: 'inline', marginRight: '8px' }} /> 1st Floor, Phase II, Ratnam chambers, H.No. 1-62/172, Plot No.172, Kavuri Hills, Madhapur, Hyderabad, Telangana 500033</li>
-            </ul>
-          </div>
         </div>
 
-        <div className={styles.footerBottom}>
-          <p>&copy; {new Date().getFullYear()} Bharat Cover. All rights reserved.</p>
+        <div className={styles.bottomSection}>
+          <p className={styles.copyright}>
+            &copy; 2024 BharatCover Insurance Brokers Pvt. Ltd. IRDAI Registration No. XXXXXXX.
+            All rights reserved.
+          </p>
+          <div className={styles.legalLinks}>
+            <Link href="/privacy">Privacy Policy</Link>
+            <Link href="/terms">Terms of Use</Link>
+            <Link href="/privacy">Cookie Policy</Link>
+            <Link href="/terms">Disclaimer</Link>
+          </div>
         </div>
       </div>
     </footer>
