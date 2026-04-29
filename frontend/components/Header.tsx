@@ -64,7 +64,7 @@ export default function Header() {
       <div className={styles.container}>
         <Link href="/" className={styles.logo}>
           <Image
-            src="/image.png"
+            src="/images/bc.png"
             alt="Bharatcover Logo"
             width={180}
             height={60}
