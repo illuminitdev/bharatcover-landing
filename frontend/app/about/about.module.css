@@ -13,7 +13,7 @@
 .hero {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(132deg, #153a79 0%, #0b2557 100%);
+  background: #10193f;
   min-height: 380px;
   display: flex;
   align-items: center;
@@ -24,9 +24,10 @@
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(circle, rgba(255, 255, 255, 0.12) 1.2px, transparent 1.2px),
-    radial-gradient(circle, rgba(255, 255, 255, 0.06) 0.8px, transparent 0.8px);
-  background-size: 34px 34px, 18px 18px;
+    radial-gradient(circle, rgba(10, 181, 168, 0.18) 1.5px, transparent 1.5px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 36px 36px, 18px 18px;
+  background-position: 0 0, 9px 9px;
 }
 
 .heroInner {

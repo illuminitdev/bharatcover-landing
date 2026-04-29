@@ -33,7 +33,7 @@
 .heroSplit {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #1b3c78 0%, #0d2454 100%);
+  background: #10193f;
   min-height: 250px;
   display: flex;
   align-items: center;
@@ -44,9 +44,10 @@
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(circle, rgba(255, 255, 255, 0.14) 1.2px, transparent 1.2px),
-    radial-gradient(circle, rgba(255, 255, 255, 0.07) 0.9px, transparent 0.9px);
+    radial-gradient(circle, rgba(10, 181, 168, 0.18) 1.5px, transparent 1.5px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
   background-size: 36px 36px, 18px 18px;
+  background-position: 0 0, 9px 9px;
   pointer-events: none;
   z-index: 0;
 }
@@ -170,7 +171,7 @@
 .pageHero {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #1b3c78 0%, #0d2454 100%);
+  background: #10193f;
 }
 
 .pageHero::before {
@@ -178,9 +179,10 @@
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(circle, rgba(255, 255, 255, 0.14) 1.2px, transparent 1.2px),
-    radial-gradient(circle, rgba(255, 255, 255, 0.07) 0.9px, transparent 0.9px);
+    radial-gradient(circle, rgba(10, 181, 168, 0.18) 1.5px, transparent 1.5px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
   background-size: 36px 36px, 18px 18px;
+  background-position: 0 0, 9px 9px;
   pointer-events: none;
   z-index: 0;
 }
