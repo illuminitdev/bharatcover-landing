@@ -6,7 +6,7 @@ const individualCoverage: MarketingSection[] = [
     icon: '✅',
     iconVariant: 'sage',
     title: "What's Covered",
-    subtitle: 'Core benefits included in the Bharat Arogya Individual plan',
+    subtitle: 'Core benefits included in the Bharat Arogya Health plan',
     items: [
       {
         title: 'In-Patient Hospitalisation',
@@ -93,7 +93,7 @@ const individualCoverage: MarketingSection[] = [
       {
         question: 'Is day care treatment covered?',
         answer:
-          'Yes. The Bharat Arogya Individual plan covers over 540 day care procedures that do not require 24-hour hospitalisation due to advances in medical technology.',
+          'Yes. The Bharat Arogya Health plan covers over 540 day care procedures that do not require 24-hour hospitalisation due to advances in medical technology.',
       },
       {
         question: 'What is room rent capping and how does it affect my claim?',
@@ -103,7 +103,7 @@ const individualCoverage: MarketingSection[] = [
       {
         question: 'Can I port my existing health policy to Bharat Arogya?',
         answer:
-          'Yes, portability is available as per IRDAI guidelines. You can port your existing health insurance policy to Bharat Arogya Individual and retain the waiting period credits accumulated under your previous policy.',
+          'Yes, portability is available as per IRDAI guidelines. You can port your existing health insurance policy to Bharat Arogya Health and retain the waiting period credits accumulated under your previous policy.',
       },
     ],
   },
@@ -229,7 +229,7 @@ export const healthInsurancePageData: MarketingPageData = {
   seo: {
     title: 'Health Insurance — Bharat Arogya',
     description:
-      'Bharat Arogya Individual and Family Floater health plans — cashless hospitals, day care, waiting periods and premiums at a glance.',
+      'Bharat Arogya Health and Family Floater health plans — cashless hospitals, day care, waiting periods and premiums at a glance.',
     openGraphTitle: 'BharatCover — Health cover for your whole family',
     openGraphDescription: 'Comprehensive cashless health insurance with hospitalisation cover across 6,000+ network hospitals.',
   },
@@ -264,7 +264,7 @@ export const healthInsurancePageData: MarketingPageData = {
     {
       type: 'productTabs',
       tabs: [
-        { id: 'individual', label: 'Individual Plan', badge: 'Bharat Arogya Individual', emoji: '🏥' },
+        { id: 'individual', label: 'Individual Plan', badge: 'Bharat Arogya Health', emoji: '🏥' },
         { id: 'floater', label: 'Family Floater', badge: 'Up to 2A+2C', emoji: '👨‍👩‍👧‍👦' },
       ],
       panels: {

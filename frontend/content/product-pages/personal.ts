@@ -39,7 +39,7 @@ export const personalPageData: MarketingPageData = {
           iconVariant: 'teal',
           insurer: 'Magma General Insurance',
           tagLine: 'Plan 1A · Ages 18–65',
-          title: 'Bharat Arogya Individual',
+          title: 'Bharat Arogya Health',
           description:
             'Comprehensive health indemnity cover for individuals with hospitalisation, day care and ambulance benefits.',
           benefits: [
@@ -119,7 +119,7 @@ export const personalPageData: MarketingPageData = {
       sub: "Understand what's covered from day one and what has a waiting period.",
       columns: ['Product', 'Initial Waiting', 'Pre-Existing Disease', 'Specific Disease'],
       rows: [
-        ['Bharat Arogya Individual', '30 Days', '24 Months', '12 Months'],
+        ['Bharat Arogya Health', '30 Days', '24 Months', '12 Months'],
         ['Bharat Arogya Family Floater', '30 Days', '12 Months', '12 Months'],
         ['Bharat Suraksha Accident', { kind: 'none', text: 'None' }, { kind: 'none', text: 'None' }, { kind: 'none', text: 'None' }],
         ['Bharat Suraksha Daily Cash', '30 Days', '24 Months', '12 Months'],
@@ -174,7 +174,7 @@ export const personalPageData: MarketingPageData = {
         {
           question: 'What is the minimum sum insured I can buy?',
           answer:
-            'For Bharat Arogya Individual, the minimum sum insured is ₹1 Lakh. For Bharat Suraksha Accident, you can start from ₹1 Lakh of accidental cover.',
+            'For Bharat Arogya Health, the minimum sum insured is ₹1 Lakh. For Bharat Suraksha Accident, you can start from ₹1 Lakh of accidental cover.',
         },
         {
           question: 'Can I have multiple personal plans at the same time?',

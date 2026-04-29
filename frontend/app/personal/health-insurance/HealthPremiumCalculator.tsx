@@ -9,21 +9,22 @@ type Option = {
   short: string;
   label: string;
   basePremium: number;
+  gstPremium: number;
 };
 
 const OPTIONS: Option[] = [
-  { amount: 100000, short: '₹1L', label: '1 Lakh', basePremium: 750 },
-  { amount: 200000, short: '₹2L', label: '2 Lakhs', basePremium: 1050 },
-  { amount: 300000, short: '₹3L', label: '3 Lakhs', basePremium: 1250 },
-  { amount: 500000, short: '₹5L', label: '5 Lakhs', basePremium: 2050 },
+  { amount: 100000, short: '₹1L', label: '1 Lakh', basePremium: 2200, gstPremium: 2599 },
+  { amount: 200000, short: '₹2L', label: '2 Lakhs', basePremium: 3050, gstPremium: 3599 },
+  { amount: 300000, short: '₹3L', label: '3 Lakhs', basePremium: 3900, gstPremium: 4599 },
+  { amount: 500000, short: '₹5L', label: '5 Lakhs', basePremium: 5600, gstPremium: 6599 },
 ];
 
 export default function HealthPremiumCalculator() {
   const [selectedAmount, setSelectedAmount] = useState(300000);
-  const [includeGst, setIncludeGst] = useState(false);
+  const [includeGst, setIncludeGst] = useState(true);
 
   const selected = useMemo(() => OPTIONS.find((opt) => opt.amount === selectedAmount) ?? OPTIONS[2], [selectedAmount]);
-  const finalPremium = includeGst ? Math.round(selected.basePremium * 1.18) : selected.basePremium;
+  const finalPremium = includeGst ? selected.gstPremium : selected.basePremium;
 
   return (
     <div className={styles.calcCard}>
