@@ -62,7 +62,7 @@ export default function HealthPremiumCalculator() {
       </div>
 
       <Link href={`/sales/quote?si=${selected.amount}&gst=${includeGst ? '1' : '0'}`} className={styles.buyBtn}>
-         But Now →
+         Buy Now →
       </Link>
       <button className={styles.outlineBtn} type="button">
         📞 Talk to Advisor

@@ -17,7 +17,7 @@ export const contactPageData: ContactPageData = {
     description:
       'Leave your details and our licensed advisors will call back within 2 hours — no spam, no pushy sales.',
     channels: [
-      { icon: '✉️', label: 'info@bharatcover.net', href: 'mailto:hello@bharatcover.net' },
+      { icon: '✉️', label: 'info@bharatcover.net', href: 'mailto:info@bharatcover.net' },
     ],
     visual: {
       src: 'https://images.unsplash.com/photo-1573497620053-ea5300f94f21?auto=format&fit=crop&w=800&q=80',
@@ -139,7 +139,7 @@ export const contactPageData: ContactPageData = {
           label: 'Email',
           value: 'info@bharatcover.net',
           sub: 'We reply within 4 business hours',
-          href: 'mailto:hello@bharatcover.net',
+          href: 'mailto:info@bharatcover.net',
         },
         {
           icon: '📍',

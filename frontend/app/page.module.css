@@ -7,7 +7,7 @@
 .hero {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #1b3c78 0%, #0d2454 100%);
+  background: #10193f;
   padding: 100px 20px 28px;
 }
 
@@ -24,15 +24,7 @@
 }
 
 .hero::after {
-  content: "";
-  position: absolute;
-  top: -120px;
-  right: -120px;
-  width: 620px;
-  height: 620px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(10, 181, 168, 0.09) 0%, transparent 70%);
-  pointer-events: none;
+  content: none;
 }
 
 .heroInner {

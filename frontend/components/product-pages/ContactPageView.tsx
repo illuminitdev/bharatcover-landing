@@ -14,7 +14,9 @@ export function ContactPageView({ data }: Props) {
       <section className={styles.pageHero} aria-label="Contact hero">
         <div className={styles.heroGrid}>
           <div className={styles.heroLeft}>
-            <div className={styles.heroTag}>{hero.tag}</div>
+            <a href="tel:+917842060960" className={styles.heroTag}>
+              {hero.tag}
+            </a>
             <h1>
               {hero.titleLine1}
               <br />
