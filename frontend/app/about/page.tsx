@@ -14,10 +14,10 @@ export default function About() {
         <div className={styles.heroInner}>
           <div className={styles.heroLeft}>
             <span className={styles.heroTag}>+ ABOUT BHARATCOVER</span>
-            <h1>Making Insurance <span>Simple</span>, Honest &amp; Affordable.</h1>
+            <h1>Making Insurance Simple,
+Honest & Affordable.</h1>
             <p>
-              We are an IRDAI-regulated insurance distribution platform on a mission to bring quality
-              protection to every Indian family and business - without the jargon or the fine print.
+              We are an IRDAI-regulated insurance distribution platform on a mission to bring quality protection to every Indian family and business — without the jargon or the fine print.
             </p>
             <div className={styles.heroCtas}>
               <a href="/personal/contact" className={styles.primaryBtn}>Talk to Us →</a>
@@ -46,7 +46,7 @@ export default function About() {
           <div className={styles.sectionHead}>
             <span>WHY BHARATCOVER</span>
             <h2>Built on the Right Foundations</h2>
-            <p>We may be new, but the infrastructure, partners and principles are solid from day one.</p>
+            <p>We may be new, but the infrastructure, partners and principles behind BharatCover are solid from day one.</p>
           </div>
           <div className={styles.foundationsGrid}>
             <article className={styles.foundationCard}>
@@ -116,38 +116,38 @@ export default function About() {
           <div className={styles.sectionHead}>
             <span>WHAT WE STAND FOR</span>
             <h2>Our Core Values</h2>
-            <p>Values that shape every plan recommendation and every customer interaction.</p>
+            <p>Every decision we make — from choosing insurer partners to writing policy summaries — is guided by these principles.</p>
           </div>
           <div className={styles.valuesGrid}>
             <article className={styles.valueCard}>
               <div className={styles.valueIcon}>🔍</div>
               <h3>Full Transparency</h3>
-              <p>Simple language, clear terms, and no hidden surprises.</p>
+              <p>No hidden clauses. No surprise exclusions at claim time. We explain every plan in plain language before you buy — including exactly what is and isn't covered.</p>
             </article>
             <article className={styles.valueCard}>
               <div className={styles.valueIcon}>💰</div>
               <h3>Genuine Affordability</h3>
-              <p>We believe good insurance should not cost a fortune.</p>
+              <p>We believe good insurance shouldn't cost a fortune. Our plans start at just ₹85/year because protecting your family shouldn't be a luxury.</p>
             </article>
             <article className={styles.valueCard}>
               <div className={styles.valueIcon}>🛡️</div>
               <h3>Claims-First Culture</h3>
-              <p>Support that stands by customers at the time they need it most.</p>
+              <p>We stand by you when it matters most. Our team actively assists with claims, from filing to settlement — we don't disappear after the sale.</p>
             </article>
             <article className={styles.valueCard}>
               <div className={styles.valueIcon}>⚖️</div>
               <h3>Built for India</h3>
-              <p>Products tailored to local realities, risks, and regulations.</p>
+              <p>Our products are designed for Indian families and Indian businesses — in regional languages, at Indian price points, with Indian realities in mind.</p>
             </article>
             <article className={styles.valueCard}>
               <div className={styles.valueIcon}>📋</div>
               <h3>Regulatory Integrity</h3>
-              <p>Compliance-led operations aligned to IRDAI standards.</p>
+              <p>Fully IRDAI-regulated. All policies are underwritten by licensed general insurers. We operate with complete compliance and zero shortcuts.</p>
             </article>
             <article className={styles.valueCard}>
               <div className={styles.valueIcon}>⚡</div>
               <h3>Speed &amp; Simplicity</h3>
-              <p>Quote in seconds. Buy in minutes. No unnecessary paperwork.</p>
+              <p>Quote in seconds. Buy in minutes. We've stripped away the paperwork so you can get covered quickly and get back to what matters.</p>
             </article>
           </div>
         </div>
@@ -167,8 +167,8 @@ export default function About() {
               <span className={styles.storyTag}>OUR TEAM</span>
               <h2>Small Team, Big Ambition</h2>
               <p>
-                BharatCover is built by a small, focused team of insurance professionals and
-                technologists who believe that honest, simple insurance can become the norm in India.
+                BharatCover is built by a small, focused team of insurance professionals and technologists who believe that honest, simple insurance can become the norm in India — not the exception
+                We bring experience from across the general insurance industry — in underwriting, distribution, claims and digital product — and we're channelling it all into building something customers can genuinely rely on.
               </p>
               <div className={styles.storyHighlight}>
                 We&apos;re growing. If you&apos;re passionate about making insurance work for real people,
