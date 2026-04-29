@@ -5,8 +5,12 @@ import Link from 'next/link';
 import { PA_SI_OPTIONS } from '@/lib/pa-quote';
 import styles from './sales.module.css';
 
-export default function SalesPage() {
-  const [activeTab, setActiveTab] = useState('pa'); // 'pa' or 'hdc'
+type SalesPageProps = {
+  initialTab?: 'pa' | 'hdc';
+};
+
+export default function SalesPage({ initialTab = 'pa' }: SalesPageProps) {
+  const [activeTab, setActiveTab] = useState<'pa' | 'hdc'>(initialTab);
   const [paSI, setPaSI] = useState(1000000);
   const [paBasePrem, setPaBasePrem] = useState(200);
   const [paGstPrem, setPaGstPrem] = useState(236);

@@ -241,7 +241,7 @@ export const healthInsurancePageData: MarketingPageData = {
       description:
         'Comprehensive cashless health insurance with hospitalisation cover, day care, pre & post care across 6,000+ network hospitals.',
       buttons: [
-        { label: 'Get covered now', href: '/personal/health-quote', variant: 'hero-primary' },
+        { label: 'Get covered now', href: '/personal/contact', variant: 'hero-primary' },
         { label: 'View premiums', href: '#premium-table', variant: 'hero-outline' },
       ],
       trustChips: [
