@@ -9,7 +9,7 @@ import styles from './Header.module.css';
 const PERSONAL_LINKS = [
   { label: 'Personal Overview', href: '/personal' },
   { label: 'Bharat Suraksha Accident', href: '/personal/accident' },
-  { label: 'Bharat Arogya Individual', href: '/personal/health-insurance' },
+  { label: 'Bharat Arogya Health', href: '/personal/health-insurance' },
 ];
 
 export default function Header() {

@@ -54,7 +54,7 @@ export default function HealthInsurancePage() {
             <div className={styles.priceTag}>
               <p>Starts from</p>
               <h4>
-                <span>Rs</span>750
+                <span>Rs</span>2599
                 <small>/year</small>
               </h4>
               <strong>Health Insurance</strong>
@@ -65,7 +65,7 @@ export default function HealthInsurancePage() {
 
       <section className={styles.planTabs}>
         <button type="button" className={`${styles.planTab} ${styles.planTabActive}`}>
-          Individual Plan <span>Bharat Arogya Individual</span>
+          Individual Plan <span>Bharat Arogya Health</span>
         </button>
         <button type="button" className={styles.planTab}>
           Family Floater <span>Up to 2A+2C</span>
@@ -76,7 +76,7 @@ export default function HealthInsurancePage() {
         <div>
           <article className={styles.card}>
             <h3>What&apos;s Covered</h3>
-            <p className={styles.cardSubtext}>Core benefits included in the Bharat Arogya Individual plan</p>
+            <p className={styles.cardSubtext}>Core benefits included in the Bharat Arogya Health plan</p>
             <div className={styles.coverGrid}>
               <div className={styles.coverItem}>
                 <strong>In-Patient Hospitalization</strong>
@@ -145,23 +145,23 @@ export default function HealthInsurancePage() {
               <tbody>
                 <tr>
                   <td>Rs 1,00,000</td>
-                  <td>Rs 750 / yr</td>
-                  <td>Rs 885 / yr</td>
+                  <td>Rs 2,200 / yr</td>
+                  <td>Rs 2,599 / yr</td>
                 </tr>
                 <tr>
                   <td>Rs 2,00,000</td>
-                  <td>Rs 1,050 / yr</td>
-                  <td>Rs 1,239 / yr</td>
+                  <td>Rs 3,050 / yr</td>
+                  <td>Rs 3,599 / yr</td>
                 </tr>
                 <tr>
                   <td>Rs 3,00,000</td>
-                  <td>Rs 1,250 / yr</td>
-                  <td>Rs 1,475 / yr</td>
+                  <td>Rs 3,900 / yr</td>
+                  <td>Rs 4,599 / yr</td>
                 </tr>
                 <tr>
                   <td>Rs 5,00,000</td>
-                  <td>Rs 2,050 / yr</td>
-                  <td>Rs 2,419 / yr</td>
+                  <td>Rs 5,600 / yr</td>
+                  <td>Rs 6,599 / yr</td>
                 </tr>
               </tbody>
             </table>

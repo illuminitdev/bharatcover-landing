@@ -24,7 +24,7 @@ export default function Footer() {
           <div className={styles.column}>
             <h4 className={styles.title}>PERSONAL PLANS</h4>
             <ul className={styles.links}>
-              <li><Link href="/personal/health-insurance">Bharat Arogya Individual</Link></li>
+              <li><Link href="/personal/health-insurance">Bharat Arogya Health</Link></li>
               <li><Link href="/personal">Bharat Arogya Family Floater</Link></li>
               <li><Link href="/personal/accident">Bharat Suraksha Accident</Link></li>
               <li><Link href="/personal/contact">Bharat Suraksha Daily Cash</Link></li>
