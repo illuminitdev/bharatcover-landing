@@ -7,35 +7,35 @@ export default function Home() {
       <section className={styles.hero}>
         <div className={styles.heroInner}>
           <div className={styles.heroLeft}>
-            <div className={styles.heroBadge}>India&apos;s #1 affordable insurance platform</div>
+            <div className={styles.heroBadge}></div>
             <h1 className={styles.heroTitle}>
-              India&apos;s Most <span>Affordable</span> Insurance.
-              <br />
-              For Everyone.
+              One Membership.
+Wellness + Insurance.
+For Every Indian.
             </h1>
             <p className={styles.heroDescription}>
-              Plans from Rs 85/year. Trusted by individuals, families and businesses across India.
+             From ₹85/year — teleconsultations, diagnostic discounts and insurance cover, all bundled into one simple membership.
             </p>
             <div className={styles.heroCards}>
               <Link href="/personal" className={styles.heroCard}>
                 <span className={styles.heroCardIcon}>
                   <img src="/icons/personal.svg" alt="Personal cover icon" width="48" height="48" />
                 </span>
-                <div className={styles.heroCardTitle}>Personal Cover</div>
-                <div className={styles.heroCardSub}>Health · Accident · Daily Cash</div>
-                <span className={styles.heroCardCta}>Explore Personal Plans →</span>
+                <div className={styles.heroCardTitle}>Bharat Arogya</div>
+                <div className={styles.heroCardSub}>Health Insurance + Wellness membership</div>
+                <span className={styles.heroCardCta}>Explore Membership →</span>
               </Link>
               <Link href="/business" className={styles.heroCard}>
                 <span className={styles.heroCardIcon}>
                   <img src="/icons/business.svg" alt="Business cover icon" width="48" height="48" />
                 </span>
-                <div className={styles.heroCardTitle}>Business Cover</div>
-                <div className={styles.heroCardSub}>Group Health · PA · Workmen Comp</div>
-                <span className={styles.heroCardCta}>Explore Business Plans →</span>
+                <div className={styles.heroCardTitle}>Bharat Suraksha</div>
+                <div className={styles.heroCardSub}>Accident Cover + Wellness Membership</div>
+                <span className={styles.heroCardCta}>Explore Membership →</span>
               </Link>
             </div>
             <div className={styles.heroTrust}>
-              Backed by Magma General · SBI General · Go Digit · IRDAI Regulated
+              From ₹85/year — teleconsultations, diagnostic discounts and insurance cover, all bundled into one simple membership.
             </div>
           </div>
           <div className={styles.heroRight}>
@@ -84,92 +84,129 @@ export default function Home() {
         </div>
       </section>
 
-      
-
+      {/* BharatCover Memberships Section */}
       <section className={styles.section}>
         <div className={styles.sectionInner}>
           <div className={styles.sectionHead}>
-            <h2>Personal Insurance Plans</h2>
-            <Link href="/personal">View all personal plans →</Link>
+            <div>
+              <h2>BharatCover Memberships</h2>
+              <p className={styles.membershipSubtitle}>Insurance cover + everyday wellness benefits — in one membership</p>
+            </div>
+            <Link href="/personal">View all memberships →</Link>
           </div>
+
+          {/* Wellness bar */}
+          <div className={styles.wellnessBar}>
+            <span className={styles.wellnessBarLabel}>💚 Every membership includes:</span>
+            <span className={styles.wellnessBarItem}>📞 Unlimited Teleconsultations</span>
+            <span className={styles.wellnessBarItem}>🔬 Up to 80% off Diagnostics</span>
+            <span className={styles.wellnessBarItem}>🩻 Up to 30% off Radiology</span>
+            <span className={styles.wellnessBarItem}>👨‍⚕️ Up to 30% off Specialist Visits</span>
+            <span className={styles.wellnessBarNetwork}>via zAppy Network</span>
+          </div>
+
           <div className={styles.twoCol}>
-            <Link href="/personal/accident" className={styles.productCard}>
-              <div className={styles.productBadgeRow}>
-                <span className={styles.productBadge}>SBI General</span>
-                <span className={styles.productBadge}>Go Digit</span>
-              </div>
-              <p className={styles.productType}>Personal Accident</p>
-              <h3>Accident & Disability Cover</h3>
-              <p>
-                Protect yourself and your income against accidental death and disability. Cover
-                starts from day one.
-              </p>
-              <ul className={styles.pointList}>
-                <li>Accidental Death — 100% sum insured</li>
-                <li>Permanent Total & Partial Disability</li>
-                <li>No waiting period. Cover from Day 1</li>
-                <li>Ages 18-65 · cover Rs 1L-15L</li>
-              </ul>
-              <div className={styles.productBottom}>
-                <div>
-                  <span className={styles.fromLabel}>From</span>
-                  <strong className={styles.fromPrice}>Rs 299</strong>
-                  <span className={styles.fromTenure}>/year</span>
+            {/* Card 1 - Bharat Suraksha */}
+            <Link href="/personal/accident" className={styles.membershipCard}>
+              <div className={styles.membershipCardTop}>
+                <div className={styles.membershipIconWrap}>
+                  <img src="/icons/personal.svg" alt="Accident cover" width="28" height="28" />
                 </div>
-                <span className={styles.viewBtn}>View Plans →</span>
+                <span className={styles.membershipBadge}>SBI General · Wellness via zAppy</span>
+              </div>
+              <p className={styles.membershipType}>BHARAT SURAKSHA · MEMBERSHIP</p>
+              <h3 className={styles.membershipTitle}>Accident Cover + Wellness</h3>
+              <p className={styles.membershipDesc}>
+                Personal accident insurance bundled with unlimited teleconsultations and healthcare discounts for your whole family.
+              </p>
+              <ul className={styles.membershipList}>
+                <li>Accidental Death &amp; Disability — from ₹1L–₹15L</li>
+                <li>Unlimited Teleconsultations (GP + Specialists)</li>
+                <li>Up to 80% off Diagnostic Tests</li>
+                <li>Up to 30% off Radiology &amp; Specialist Visits</li>
+              </ul>
+              <div className={styles.membershipBottom}>
+                <div>
+                  <span className={styles.fromLabel}>From </span>
+                  <strong className={styles.membershipPrice}>₹299</strong>
+                  <span className={styles.fromTenure}> /year</span>
+                </div>
+                <span className={styles.membershipCta}>View Membership →</span>
               </div>
             </Link>
-            <Link href="/personal/health-insurance" className={styles.productCard}>
-              <div className={styles.productBadgeRow}>
-                <span className={styles.productBadge}>Magma General Insurance</span>
-              </div>
-              <p className={styles.productType}>Health Insurance</p>
-              <h3>Health & Hospitalisation Cover</h3>
-              <p>
-                Health indemnity plans for individuals and families with in-patient and day care
-                benefits.
-              </p>
-              <ul className={styles.pointList}>
-                <li>In-Patient Hospitalisation — up to SI</li>
-                <li>Pre & Post-Hospitalisation included</li>
-                <li>Individual & Family Floater plans</li>
-                <li>Ages 18-65 · cover Rs 1L-5L</li>
-              </ul>
-              <div className={styles.productBottom}>
-                <div>
-                  <span className={styles.fromLabel}>From</span>
-                  <strong className={styles.fromPrice}>Rs 750</strong>
-                  <span className={styles.fromTenure}>/year</span>
+
+            {/* Card 2 - Bharat Arogya */}
+            <Link href="/personal/health-insurance" className={styles.membershipCard}>
+              <div className={styles.membershipCardTop}>
+                <div className={styles.membershipIconWrapBlue}>
+                  <img src="/icons/personal.svg" alt="Health insurance" width="28" height="28" />
                 </div>
-                <span className={styles.viewBtnAlt}>View Plans →</span>
+                <span className={styles.membershipBadge}>SBI General · Wellness via zAppy</span>
+              </div>
+              <p className={styles.membershipType}>BHARAT AROGYA · MEMBERSHIP</p>
+              <h3 className={styles.membershipTitle}>Health Insurance + Wellness</h3>
+              <p className={styles.membershipDesc}>
+                Comprehensive health indemnity plus everyday wellness — teleconsultations, diagnostics and specialist discounts, all in one membership.
+              </p>
+              <ul className={styles.membershipList}>
+                <li>In-Patient Hospitalisation &amp; Day Care</li>
+                <li>Unlimited Teleconsultations for Family</li>
+                <li>Up to 80% off Diagnostic Tests</li>
+                <li>Individual &amp; Family Floater Plans</li>
+              </ul>
+              <div className={styles.membershipBottom}>
+                <div>
+                  <span className={styles.fromLabel}>From </span>
+                  <strong className={styles.membershipPrice}>₹750</strong>
+                  <span className={styles.fromTenure}> /year</span>
+                </div>
+                <span className={styles.membershipCtaBlue}>View Membership →</span>
               </div>
             </Link>
           </div>
         </div>
       </section>
 
+      {/* Business & Institutional Plans Section */}
       <section className={`${styles.section} ${styles.darkSection}`}>
         <div className={styles.sectionInner}>
           <div className={styles.sectionHead}>
-            <h2>Business & Institutional Plans</h2>
+            <div>
+              <h2>Business &amp; Institutional Plans</h2>
+              <p className={styles.bizSectionSubtitle}>Protecting your workforce, students and operations</p>
+            </div>
             <Link href="/business">View all business plans →</Link>
           </div>
-          <div className={styles.grid3}>
+          <div className={styles.grid4}>
             <Link href="/business" className={styles.bizCard}>
-              <span className={styles.bizChip}>Custom Quotes</span>
+              <div className={styles.bizIcon}>🏢</div>
               <h3>Group Health Insurance</h3>
+              <p className={styles.bizType}>Corporate Health Cover</p>
+              <span className={styles.bizChip}>Custom Quotes</span>
               <p>Bulk employee health plans tailored to your organization&apos;s size and needs.</p>
               <span className={styles.bizLink}>Get Quote →</span>
             </Link>
             <Link href="/business" className={styles.bizCard}>
-              <span className={styles.bizChip}>Per Employee Pricing</span>
+              <div className={styles.bizIcon}>👷</div>
               <h3>Group Personal Accident</h3>
+              <p className={styles.bizType}>Workforce Protection</p>
+              <span className={styles.bizChip}>Per Employee Pricing</span>
               <p>Accident cover for your entire staff with flexible per-employee pricing.</p>
               <span className={styles.bizLink}>Get Quote →</span>
             </Link>
+            <Link href="/business/school-pa" className={styles.bizCard}>
+              <div className={styles.bizIcon}>🎓</div>
+              <h3>School &amp; College PA</h3>
+              <p className={styles.bizType}>Institutional Accident</p>
+              <span className={styles.bizChip}>Special Institutional Rates</span>
+              <p>Student and staff accident cover with special institutional rates for schools and colleges.</p>
+              <span className={styles.bizLink}>Get Quote →</span>
+            </Link>
             <Link href="/business" className={styles.bizCard}>
-              <span className={styles.bizChip}>IRDAI Compliant</span>
+              <div className={styles.bizIcon}>⚙️</div>
               <h3>Workmen Compensation</h3>
+              <p className={styles.bizType}>WC Insurance</p>
+              <span className={styles.bizChip}>IRDAI Compliant</span>
               <p>Statutory compliance cover for workmen compensation mandated by law.</p>
               <span className={styles.bizLink}>Get Quote →</span>
             </Link>
@@ -177,6 +214,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Why Choose Section */}
       <section className={styles.section} id="about">
         <div className={styles.sectionInner}>
           <div className={styles.centerHead}>
@@ -185,22 +223,30 @@ export default function Home() {
           </div>
           <div className={styles.grid4}>
             <div className={styles.infoCard}>
-              <div className={styles.infoIcon}><img src="/icons/hi.svg" width="48" height="48" alt="Affordable plans icon" /></div>
+              <div className={styles.infoIcon}>
+                <img src="/icons/hi.svg" width="48" height="48" alt="Affordable plans icon" />
+              </div>
               <h3>Plans from Rs85/year</h3>
               <p>No-frills, affordable cover that fits every budget — from daily workers to executives.</p>
             </div>
             <div className={styles.infoCard}>
-              <div className={styles.infoIcon}><img src="/icons/trust.svg" width="48" height="48" alt="Trusted insurers icon" /></div>
+              <div className={styles.infoIcon}>
+                <img src="/icons/trust.svg" width="48" height="48" alt="Trusted insurers icon" />
+              </div>
               <h3>Trusted Insurers</h3>
-              <p>Backed by Magma General, SBI General & Go Digit — names India trusts for decades.</p>
+              <p>Backed by Magma General, SBI General &amp; Go Digit — names India trusts for decades.</p>
             </div>
             <div className={styles.infoCard}>
-              <div className={styles.infoIcon}><img src="/icons/nowaitingperiod.svg" width="48" height="48" alt="No waiting period icon" /></div>
+              <div className={styles.infoIcon}>
+                <img src="/icons/nowaitingperiod.svg" width="48" height="48" alt="No waiting period icon" />
+              </div>
               <h3>Zero Waiting on PA</h3>
               <p>Bharat Suraksha Accident covers from Day 1 — no waiting period, no surprises.</p>
             </div>
             <div className={styles.infoCard}>
-              <div className={styles.infoIcon}><img src="/icons/buildforbharat.svg" width="48" height="48" alt="Built for Bharat icon" /></div>
+              <div className={styles.infoIcon}>
+                <img src="/icons/buildforbharat.svg" width="48" height="48" alt="Built for Bharat icon" />
+              </div>
               <h3>Built for Bharat</h3>
               <p>Products designed for Indian families and businesses, at prices that make sense here.</p>
             </div>
@@ -208,6 +254,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 3 Steps Section */}
       <section className={styles.section} id="claims">
         <div className={styles.sectionInner}>
           <div className={styles.centerHead}>
@@ -234,17 +281,31 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Stats Strip */}
       <section className={styles.statsStrip}>
         <div className={styles.sectionInner}>
           <div className={styles.grid4}>
-            <div className={styles.statItem}><strong>Rs 85</strong><span>Lowest Annual Premium</span></div>
-            <div className={styles.statItem}><strong>4</strong><span>Products Across Personal & Business</span></div>
-            <div className={styles.statItem}><strong>18-65</strong><span>Age Coverage Range</span></div>
-            <div className={styles.statItem}><strong>3</strong><span>Trusted Insurer Partners</span></div>
+            <div className={styles.statItem}>
+              <strong>Rs 85</strong>
+              <span>Lowest Annual Premium</span>
+            </div>
+            <div className={styles.statItem}>
+              <strong>4</strong>
+              <span>Products Across Personal &amp; Business</span>
+            </div>
+            <div className={styles.statItem}>
+              <strong>18-65</strong>
+              <span>Age Coverage Range</span>
+            </div>
+            <div className={styles.statItem}>
+              <strong>3</strong>
+              <span>Trusted Insurer Partners</span>
+            </div>
           </div>
         </div>
       </section>
 
+      {/* CTA Band */}
       <section className={styles.ctaBand}>
         <div className={styles.sectionInner}>
           <h2>Ready to Get Covered?</h2>
