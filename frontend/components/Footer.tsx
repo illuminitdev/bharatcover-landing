@@ -28,7 +28,7 @@ export default function Footer() {
               <li><Link href="/personal/health-insurance">Bharat Arogya Individual</Link></li>
               <li><Link href="/personal">Bharat Arogya Family Floater</Link></li>
               <li><Link href="/personal/accident">Bharat Suraksha Accident</Link></li>
-              <li><Link href="/personal/health-quote">Bharat Suraksha Daily Cash</Link></li>
+              <li><Link href="/personal/contact">Bharat Suraksha Daily Cash</Link></li>
             </ul>
           </div>
 
@@ -45,7 +45,7 @@ export default function Footer() {
           <div className={styles.column}>
             <h4 className={styles.title}>SUPPORT</h4>
             <ul className={styles.links}>
-              <li><Link href="/personal/health-quote">Get a Quote</Link></li>
+              <li><Link href="/personal/contact">Get a Quote</Link></li>
               <li><Link href="/claims">Claims Support</Link></li>
               <li><Link href="/about">About Us</Link></li>
               <li><Link href="/contact">Contact Us</Link></li>

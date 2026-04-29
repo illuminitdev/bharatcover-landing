@@ -8,9 +8,8 @@ import styles from './Header.module.css';
 
 const PERSONAL_LINKS = [
   { label: 'Personal Overview', href: '/personal' },
-  { label: 'Accident Cover', href: '/personal/accident' },
-  { label: 'Health Insurance', href: '/personal/health-insurance' },
-  { label: 'Health Quote', href: '/personal/health-quote' },
+  { label: 'Bharat Suraksha Accident', href: '/personal/accident' },
+  { label: 'Bharat Arogya Individual', href: '/personal/health-insurance' },
 ];
 
 export default function Header() {
@@ -65,8 +64,8 @@ export default function Header() {
       <div className={styles.container}>
         <Link href="/" className={styles.logo}>
           <Image
-            src="/logo.png"
-            alt="VS Insurance Logo"
+            src="/image.png"
+            alt="Bharatcover Logo"
             width={180}
             height={60}
             priority

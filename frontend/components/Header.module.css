@@ -13,7 +13,7 @@
 .header.scrolled {
   box-shadow: var(--shadow-lg);
   border-bottom: 1px solid var(--border-color);
-  background: rgba(255, 255, 255, 0.95);
+  background: #f2f3f5;
 }
 
 .container {
@@ -27,6 +27,8 @@
 }
 
 .logo {
+  display: flex;
+  align-items: center;
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--primary-color);
@@ -49,6 +51,7 @@
 .logoImage {
   height: auto;
   object-fit: contain;
+  mix-blend-mode: multiply;
   transition: transform 0.3s ease;
 }
 
