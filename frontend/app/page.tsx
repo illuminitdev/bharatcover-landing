@@ -63,14 +63,12 @@ export default function Home() {
           <div className={styles.partnerLogos}>
             <div className={styles.partnerLogo}>
               <div className={styles.partnerLogoContent}>
-                <img src="/logos/partners/magma-general.svg" alt="Magma General" className={styles.partnerLogoImage} />
-                <span className={styles.partnerLogoText}>Magma General Insurance</span>
+                <img src="/images/magna.png" alt="Magma General" className={styles.partnerLogoImage} />
               </div>
             </div>
             <div className={styles.partnerLogo}>
               <div className={styles.partnerLogoContent}>
                 <img src="/logos/partners/sbi.png" alt="SBI General" className={styles.partnerLogoImage} />
-                <span className={styles.partnerLogoText}>SBI General Insurance</span>
               </div>
             </div>
             <div className={styles.partnerLogo}>
@@ -80,7 +78,6 @@ export default function Home() {
                   alt="Go Digit General Insurance"
                   className={styles.partnerLogoImage}
                 />
-                <span className={styles.partnerLogoText}>Go Digit General Insurance</span>
               </div>
             </div>
           </div>
@@ -183,7 +180,7 @@ export default function Home() {
       <section className={styles.section} id="about">
         <div className={styles.sectionInner}>
           <div className={styles.centerHead}>
-            <h2>Why Thousands Choose Bharat Cover</h2>
+            <h2>Why Thousands Choose<br /> Bharat Cover</h2>
             <div className={styles.headAccent} />
           </div>
           <div className={styles.grid4}>
