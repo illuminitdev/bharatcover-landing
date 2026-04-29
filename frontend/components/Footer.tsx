@@ -17,8 +17,7 @@ export default function Footer() {
           <div className={styles.column}>
             <h3 className={styles.title}>BHARATCOVER</h3>
             <p className={styles.description}>
-              IRDAI-regulated insurance distribution platform. Policies underwritten by Magma
-              General, SBI General and Go Digit General Insurance.
+              An IRDAI-regulated wellness distribution platform, offering plans underwritten by Magma General, SBI General, and Go Digit General.
             </p>
           </div>
 
@@ -101,7 +100,7 @@ export default function Footer() {
 
         <div className={styles.bottomSection}>
           <p className={styles.copyright}>
-            &copy; 2024 BharatCover Insurance Brokers Pvt. Ltd. IRDAI Registration No. XXXXXXX.
+            &copy; 2026 “Bharatcover is a brand owned and operated by Lakryx Private Limited.”
             All rights reserved.
           </p>
           <div className={styles.legalLinks}>
@@ -109,6 +108,7 @@ export default function Footer() {
             <Link href="/terms">Terms of Use</Link>
             <Link href="/privacy">Cookie Policy</Link>
             <Link href="/terms">Disclaimer</Link>
+             <Link href="/refund">Refund Policy</Link>
           </div>
         </div>
       </div>

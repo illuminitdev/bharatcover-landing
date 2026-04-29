@@ -18,13 +18,17 @@ export default function Home() {
             </p>
             <div className={styles.heroCards}>
               <Link href="/personal" className={styles.heroCard}>
-                <span className={styles.heroCardIcon}>🛡️</span>
+                <span className={styles.heroCardIcon}>
+                  <img src="/icons/personal.svg" alt="Personal cover icon" width="48" height="48" />
+                </span>
                 <div className={styles.heroCardTitle}>Personal Cover</div>
                 <div className={styles.heroCardSub}>Health · Accident · Daily Cash</div>
                 <span className={styles.heroCardCta}>Explore Personal Plans →</span>
               </Link>
               <Link href="/business" className={styles.heroCard}>
-                <span className={styles.heroCardIcon}>🏢</span>
+                <span className={styles.heroCardIcon}>
+                  <img src="/icons/business.svg" alt="Business cover icon" width="48" height="48" />
+                </span>
                 <div className={styles.heroCardTitle}>Business Cover</div>
                 <div className={styles.heroCardSub}>Group Health · PA · Workmen Comp</div>
                 <span className={styles.heroCardCta}>Explore Business Plans →</span>
@@ -52,12 +56,38 @@ export default function Home() {
 
       <section className={styles.partnerBar}>
         <div className={styles.partnerInner}>
-          <span className={styles.partnerLabel}>Our Insurance Partners</span>
-          <div className={styles.partnerPill}>Magma General Insurance</div>
-          <div className={styles.partnerPill}>SBI General Insurance</div>
-          <div className={styles.partnerPill}>Go Digit General Insurance</div>
+          <div className={styles.partnerHeader}>
+            <h3 className={styles.partnerTitle}>Our Insurance Partners</h3>
+            <p className={styles.partnerSubtitle}>Trusted by millions across India</p>
+          </div>
+          <div className={styles.partnerLogos}>
+            <div className={styles.partnerLogo}>
+              <div className={styles.partnerLogoContent}>
+                <img src="/logos/partners/magma-general.svg" alt="Magma General" className={styles.partnerLogoImage} />
+                <span className={styles.partnerLogoText}>Magma General Insurance</span>
+              </div>
+            </div>
+            <div className={styles.partnerLogo}>
+              <div className={styles.partnerLogoContent}>
+                <img src="/logos/partners/sbi.png" alt="SBI General" className={styles.partnerLogoImage} />
+                <span className={styles.partnerLogoText}>SBI General Insurance</span>
+              </div>
+            </div>
+            <div className={styles.partnerLogo}>
+              <div className={styles.partnerLogoContent}>
+                <img
+                  src="/logos/partners/digit.png"
+                  alt="Go Digit General Insurance"
+                  className={styles.partnerLogoImage}
+                />
+                <span className={styles.partnerLogoText}>Go Digit General Insurance</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
+
+      
 
       <section className={styles.section}>
         <div className={styles.sectionInner}>
@@ -158,22 +188,22 @@ export default function Home() {
           </div>
           <div className={styles.grid4}>
             <div className={styles.infoCard}>
-              <div className={styles.infoIcon}>💰</div>
+              <div className={styles.infoIcon}><img src="/icons/hi.svg" width="48" height="48" alt="Affordable plans icon" /></div>
               <h3>Plans from Rs85/year</h3>
               <p>No-frills, affordable cover that fits every budget — from daily workers to executives.</p>
             </div>
             <div className={styles.infoCard}>
-              <div className={styles.infoIcon}>🏆</div>
+              <div className={styles.infoIcon}><img src="/icons/trust.svg" width="48" height="48" alt="Trusted insurers icon" /></div>
               <h3>Trusted Insurers</h3>
               <p>Backed by Magma General, SBI General & Go Digit — names India trusts for decades.</p>
             </div>
             <div className={styles.infoCard}>
-              <div className={styles.infoIcon}>⚡</div>
+              <div className={styles.infoIcon}><img src="/icons/nowaitingperiod.svg" width="48" height="48" alt="No waiting period icon" /></div>
               <h3>Zero Waiting on PA</h3>
               <p>Bharat Suraksha Accident covers from Day 1 — no waiting period, no surprises.</p>
             </div>
             <div className={styles.infoCard}>
-              <div className={styles.infoIcon}>🇮🇳</div>
+              <div className={styles.infoIcon}><img src="/icons/buildforbharat.svg" width="48" height="48" alt="Built for Bharat icon" /></div>
               <h3>Built for Bharat</h3>
               <p>Products designed for Indian families and businesses, at prices that make sense here.</p>
             </div>

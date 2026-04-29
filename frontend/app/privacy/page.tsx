@@ -25,8 +25,7 @@ export default function PrivacyPage() {
           <article className={styles.sectionCard}>
             <h2>1. Who We Are</h2>
             <p>
-              BharatCover Insurance Brokers Pvt. Ltd. is an IRDAI-registered insurance intermediary
-              providing insurance advisory and distribution services.
+             BharatCover is an IRDAI-regulated wellness distribution platform offering plans underwritten by Magma General Insurance, SBI General Insurance, and Go Digit General Insurance.
             </p>
             <p>
               This Privacy Policy explains what data we collect, why we collect it, and how we use
