@@ -614,8 +614,8 @@
 }
 
 .ctaPrimary {
-  background: linear-gradient(135deg, #0c71d7, #0ab5a8);
-  color: #fff;
+  background: white;
+  color: #1467C1;
 }
 
 .ctaSecondary {
